@@ -1,0 +1,22 @@
+{
+  "name": "hydiscord",
+  "version": "1.0.0",
+  "description": "A Discord Bot that allows you to see Hypixel stats.",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "hypixel-api-reborn": "^3.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hypixel",
+    "discord",
+    "discordjs",
+    "discord.js"
+  ],
+  "author": "cxntered",
+  "license": "ISC"
+}
