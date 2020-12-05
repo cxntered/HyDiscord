@@ -8,7 +8,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
         .setTitle('Help')
         .addField('Utility 🛠', '`h!help` \n`h!members` \n`h!ping` \n`h!invite` \n`h!clear` \n`h!ban` \n`h!kick`', true) 
-        .addField('Hypixel 🎮', '`h!bedwars` \n`h!skywars` \n`h!duels` \n`h!uhc` \n`h!speeduhc` \n`h!watchdog` \n`h!socials` \n`h!namehistory`', true)
+        .addField('Hypixel 🎮', '`h!player` \n`h!bedwars` \n`h!skywars` \n`h!duels` \n`h!uhc` \n`h!speeduhc` \n`h!watchdog` \n`h!socials` \n`h!namehistory`', true)
         .setDescription('Do `!help [command]` to see what that command does.')
         .setColor(color)
         .setFooter(footer)
