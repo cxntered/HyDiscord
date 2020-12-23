@@ -8,14 +8,14 @@ module.exports = {
         if(user){
             const member = message.guild.member(user);
             if(member){
-                member.ban({Reason: 'You did a no no.'}).then(() =>{
+                member.ban({reason: 'Did a no no :('}).then(() =>{
                     message.channel.send(`Sucessfully banned ${user.tag}`)
                 })
             } else{
                 message.channel.send("That user isn't in the server!")
             } 
         } else {
-            message.channel.send("You need to specify who you want to ban!");
+            message.channel.send("You need to @ who you want to ban!");
         }
     }
 }

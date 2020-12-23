@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
-var color = '0x738ADB';
-var footer = 'HyDiscord - Made by cxntered';
+const { color, footer } = require('../Storages/embed.json')
 const { apikey } = require('../Storages/config.json');
 const HypixelAPIReborn = require('hypixel-api-reborn');
 const hypixelAPIReborn = new HypixelAPIReborn.Client(apikey);
@@ -14,7 +13,7 @@ module.exports = {
                 .setColor(color)
                 .addField('h!duels', '`h!duels` lets you see duels stats about a player.')
                 .addField('Usage', '`h!duels uhc`\n`h!duels skywars`\n`h!duels bridge`\n`h!duels sumo`\n`h!duels op`\n`h!duels combo`')
-                .setFooter(footer)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
                 .setImage('https://hypixel.net/styles/hypixel-v2/images/game-icons/Duels-64.png')
 
             message.channel.send(embed);
@@ -26,12 +25,12 @@ module.exports = {
                 const embed = new Discord.MessageEmbed()
                     .setTitle('Classic Duels Stats')
                     .setDescription(`[${player.rank}] ${player.nickname}`)
-                    .setColor(colors['MainColor'])
-                    .addField('Kills:', player.stats.duels.classic.v1.kills)
-                    .addField('Losses:', player.stats.duels.classic.v1.losses)
-                    .addField('Deaths:', player.stats.duels.classic.v1.deaths)
-                    .addField('Wins:', player.stats.duels.classic.v1.wins)
-                    .setFooter(footer)
+                    .setColor(color)
+                    .addField('Kills:', player.stats.duels.classic.kills)
+                    .addField('Losses:', player.stats.duels.classic.losses)
+                    .addField('Deaths:', player.stats.duels.classic.deaths)
+                    .addField('Wins:', player.stats.duels.classic.wins)
+                    .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
 
                 message.channel.send(embed);
 
@@ -49,12 +48,12 @@ module.exports = {
                 const embed = new Discord.MessageEmbed()
                     .setTitle('UHC Duels Stats')
                     .setDescription(`[${player.rank}] ${player.nickname}`)
-                    .setColor(colors['MainColor'])
+                    .setColor(color)
                     .addField('Kills:', player.stats.duels.uhc.v1.kills)
                     .addField('Losses:', player.stats.duels.uhc.v1.losses)
                     .addField('Deaths:', player.stats.duels.uhc.v1.deaths)
                     .addField('Wins:', player.stats.duels.uhc.v1.wins)
-                    .setFooter(footer)
+                    .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
 
                 message.channel.send(embed);
 
@@ -77,7 +76,7 @@ module.exports = {
                     .addField('Losses:', player.stats.duels.skywars.v1.losses)
                     .addField('Deaths:', player.stats.duels.skywars.v1.deaths)
                     .addField('Wins:', player.stats.duels.skywars.v1.wins)
-                    .setFooter(footer)
+                    .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
 
                 message.channel.send(embed);
 
@@ -100,7 +99,7 @@ module.exports = {
                     .addField('Losses:', player.stats.duels.bridge.v1.losses)
                     .addField('Deaths:', player.stats.duels.bridge.v1.deaths)
                     .addField('Wins:', player.stats.duels.bridge.v1.wins)
-                    .setFooter(footer)
+                    .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
 
                 message.channel.send(embed);
 
@@ -123,7 +122,7 @@ module.exports = {
                     .addField('Losses:', player.stats.duels.sumo.losses)
                     .addField('Deaths:', player.stats.duels.sumo.deaths)
                     .addField('Wins:', player.stats.duels.sumo.wins)
-                    .setFooter(footer)
+                    .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
 
                 message.channel.send(embed);
 
@@ -146,7 +145,7 @@ module.exports = {
                     .addField('Losses:', player.stats.duels.op.v1.losses)
                     .addField('Deaths:', player.stats.duels.op.v1.deaths)
                     .addField('Wins:', player.stats.duels.op.v1.wins)
-                    .setFooter(footer)
+                    .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
 
                 message.channel.send(embed);
 
@@ -168,7 +167,7 @@ module.exports = {
                     .addField('Losses:', player.stats.duels.combo.losses, true)
                     .addField('Deaths:', player.stats.duels.combo.deaths, true)
                     .addField('Wins:', player.stats.duels.combo.wins, true)
-                    .setFooter(footer)
+                    .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
 
                 message.channel.send(embed);
 

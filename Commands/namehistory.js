@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const fetch = require('node-fetch');
-var color = '0x738ADB';
-var footer = 'HyDiscord - Made by cxntered';
+const { color, footer } = require('../Storages/embed.json')
 module.exports = {
     name: 'namehistory',
     description: "Shows the name history of a user." ,
@@ -20,7 +19,7 @@ module.exports = {
             .setTitle('Name History')
             .setDescription(`${playerNameData[playerNameData.length - 1].name}'s Name History`)
             .setColor(color)
-            .setFooter(footer)
+            .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
 
         for(length in playerNameData) {
             for(key in playerNameData[length]) {

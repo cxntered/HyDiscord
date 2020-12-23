@@ -1,46 +1,51 @@
 const Discord = require('discord.js');
-var color = '0x738ADB';
-var footer = 'HyDiscord - Made by cxntered';
+const fetch = require('node-fetch');
+const { color, footer } = require('../Storages/embed.json')
 const { apikey } = require('../Storages/config.json');
 const HypixelAPIReborn = require('hypixel-api-reborn');
 const hypixelAPIReborn = new HypixelAPIReborn.Client(apikey);
 
 module.exports = {
     name: 'socials',
-    execute(message, args) {
-        hypixelAPIReborn.getPlayer(args[0]).then((player) => {
+    async execute(message, args) {
+        hypixelAPIReborn.getPlayer(args[0]).then(async (player) => {
+            const playerUUID = await fetch(`https://api.mojang.com/users/profiles/minecraft/${args[0]}`);
+            const playerUUIDData = await playerUUID.json();
+
             let embed = new Discord.MessageEmbed()
                 .setTitle('Social Media')
                 .setDescription(`[${player.rank}] ${player.nickname}`)
                 .setColor(color)
-                .setFooter(footer)
+                .setThumbnail(`https://visage.surgeplay.com/face/256/${playerUUIDData.id}.png`)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
 
-            if (player.socialmedia[0] != undefined || player.socialmedia[0] != null) {
-                embed.addField(player.socialmedia[0].name, player.socialmedia[0].link)
+
+            if (player.socialMedia[0] != undefined || player.socialMedia[0] != null) {
+                embed.addField(player.socialMedia[0].name, player.socialMedia[0].link)
             }
 
-            if (player.socialmedia[1] != undefined || player.socialmedia[1] != null) {
-                embed.addField(player.socialmedia[1].name, player.socialmedia[1].link)
+            if (player.socialMedia[1] != undefined || player.socialMedia[1] != null) {
+                embed.addField(player.socialMedia[1].name, player.socialMedia[1].link)
             }
 
-            if (player.socialmedia[2] != undefined || player.socialmedia[2] != null) {
-                embed.addField(player.socialmedia[2].name, player.socialmedia[2].link)
+            if (player.socialMedia[2] != undefined || player.socialMedia[2] != null) {
+                embed.addField(player.socialMedia[2].name, player.socialMedia[2].link)
             }
 
-            if (player.socialmedia[3] != undefined || player.socialmedia[3] != null) {
-                embed.addField(player.socialmedia[3].name, player.socialmedia[3].link)
+            if (player.socialMedia[3] != undefined || player.socialMedia[3] != null) {
+                embed.addField(player.socialMedia[3].name, player.socialMedia[3].link)
             }
 
-            if (player.socialmedia[4] != undefined || player.socialmedia[4] != null) {
-                embed.addField(player.socialmedia[4].name, player.socialmedia[4].link)
+            if (player.socialMedia[4] != undefined || player.socialMedia[4] != null) {
+                embed.addField(player.socialMedia[4].name, player.socialMedia[4].link)
             }
 
-            if (player.socialmedia[5] != undefined || player.socialmedia[5] != null) {
-                embed.addField(player.socialmedia[5].name, player.socialmedia[5].link)
+            if (player.socialMedia[5] != undefined || player.socialMedia[5] != null) {
+                embed.addField(player.socialMedia[5].name, player.socialMedia[5].link)
             }
 
-            if (player.socialmedia[6] != undefined || player.socialmedia[6] != null) {
-                embed.addField(player.socialmedia[6].name, player.socialmedia[6].link)
+            if (player.socialMedia[6] != undefined || player.socialMedia[6] != null) {
+                embed.addField(player.socialMedia[6].name, player.socialMedia[6].link)
             }
 
             message.channel.send(embed)

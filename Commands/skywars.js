@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
-var color = '0x738ADB';
-var footer = 'HyDiscord - Made by cxntered';
+const { color, footer } = require('../Storages/embed.json')
 const { apikey } = require('../Storages/config.json');
 const HypixelAPIReborn = require('hypixel-api-reborn');
 const hypixelAPIReborn = new HypixelAPIReborn.Client(apikey);
@@ -14,7 +13,7 @@ module.exports = {
                     .setTitle('SkyWars Stats')
                     .setDescription(`[${player.rank}] ${player.nickname}`)
                     .setColor(color)
-                    .setFooter(footer)
+                    .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
                     .setImage('https://hypixel.net/styles/hypixel-v2/images/game-icons/Skywars-64.png')
                     .addField('Level:', player.stats.skywars.level, true)
                     .addField('Heads:', player.stats.skywars.heads, true)

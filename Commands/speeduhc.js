@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
-var color = '0x738ADB';
-var footer = 'HyDiscord - Made by cxntered';
+const { color, footer } = require('../Storages/embed.json')
 const { apikey } = require('../Storages/config.json');
 const HypixelAPIReborn = require('hypixel-api-reborn');
 
@@ -15,7 +14,7 @@ module.exports = {
                 .setTitle(`SpeedUHC Stats`)
                 .setDescription(`[${player.rank}] ${player.nickname}`)
                 .setColor(color)
-                .setFooter(footer)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
                 .setImage('https://hypixel.net/styles/hypixel-v2/images/game-icons/SpeedUHC-64.png')
                 .addField('Kills:', player.stats.speedUHC.kills, true)
                 .addField('Losses:', player.stats.speedUHC.losses, true)

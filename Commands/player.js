@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const fetch = require('node-fetch');
-var color = '0x738ADB';
-var footer = 'HyDiscord - Made by cxntered';
+const { color, footer } = require('../Storages/embed.json')
 const { apikey } = require('../Storages/config.json');
 const HypixelAPIReborn = require('hypixel-api-reborn');
 const hypixelAPIReborn = new HypixelAPIReborn.Client(apikey);
@@ -9,7 +8,7 @@ const hypixelAPIReborn = new HypixelAPIReborn.Client(apikey);
 module.exports = {
     name: 'player',
     async execute(message, args) {
-        hypixelAPIReborn.getPlayer(args[0]).then(async (player) => {
+        hypixelAPIReborn.getPlayer(args[0], { guild: true }).then(async (player) => {
             const playerUUID = await fetch(`https://api.mojang.com/users/profiles/minecraft/${args[0]}`);
             const playerUUIDData = await playerUUID.json();
 
@@ -26,7 +25,7 @@ module.exports = {
             playerMinecraftVersion = "";
 
             if (player.mcVersion == null) {
-                playerMinecraftVersion = "unknown";
+                playerMinecraftVersion = "Unknown";
             }
 
             if (player.mcVersion != null) {
@@ -57,17 +56,22 @@ module.exports = {
                 .addField('Rank:', playerRank, true)
                 .addField('Level:', player.level, true)
                 .addField('Karma:', player.karma, true)
-                .addField('Main MC Version:', playerMinecraftVersion, true)
-                .addField('First Login:', (firstL))
-                .addField('Last Login:', (lastL))
-                .addField('Status:', playerIsOnline, true)
 
-            if(player.rank.includes('MVP+')) {
+            if (player.guild != null) {
+                playerInfoEmbed.addField('Guild:', player.guild.name)
+            }
+            
+                playerInfoEmbed.addField('Main MC Version:', playerMinecraftVersion, true)
+                playerInfoEmbed.addField('First Login:', (firstL))
+                playerInfoEmbed.addField('Last Login:', (lastL))
+                playerInfoEmbed.addField('Status:', playerIsOnline, true)
+
+            if (player.rank.includes('MVP+')) {
                 playerInfoEmbed.addField('Plus Color:', player.plusColor.toString())
             }
 
                 playerInfoEmbed.addField('Social Media:', `Run \`h!socials ${player.nickname}\``)
-                playerInfoEmbed.setFooter(footer)
+                playerInfoEmbed.setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
 
             message.channel.send(playerInfoEmbed);
         }).catch(e => {

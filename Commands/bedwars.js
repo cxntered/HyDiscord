@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
-var color = '0x738ADB';
-var footer = 'HyDiscord - Made by cxntered';
+const { color, footer } = require('../Storages/embed.json')
 const { apikey } = require('../Storages/config.json');
 const HypixelAPIReborn = require('hypixel-api-reborn');
 const hypixelAPIReborn = new HypixelAPIReborn.Client(apikey);
@@ -13,7 +12,7 @@ module.exports = {
                 const embed = new Discord.MessageEmbed()
                     .setTitle('BedWars Stats')
                     .setColor(color)
-                    .setFooter(footer)
+                    .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
                     .setDescription(`[${player.rank}] ${player.nickname}`)
                     .setImage('https://hypixel.net/styles/hypixel-v2/images/game-icons/BedWars-64.png')
                     .addField('Level (Star)', player.stats.bedwars.level, true)
@@ -22,7 +21,7 @@ module.exports = {
                     .addField('WL Ratio:', player.stats.bedwars.WLRatio, true)
                     .addField('Bed Breaks:', player.stats.bedwars.beds.broken, true)
                     .addField('Beds Lost:', player.stats.bedwars.beds.lost, true)
-                    //.addField('Bed BL Ratio:', player.stats.bedwars.beds.BLRatio, true)
+                    .addField('Bed BL Ratio:', player.stats.bedwars.beds.BLRatio, true)
                     .addField('Coins:', player.stats.bedwars.coins, true)
                     .addField('Total Deaths:', player.stats.bedwars.deaths, true)
                     .addField('Final Deaths:', player.stats.bedwars.finalDeaths, true)
@@ -30,6 +29,10 @@ module.exports = {
                     .addField('Total Final Kills:', player.stats.bedwars.finalKills, true)
                     .addField('Winstreak:', player.stats.bedwars.winstreak, true)
                     .addField('Total Wins:', player.stats.bedwars.wins, true)
+                    .addField('Iron Collected:', player.stats.bedwars.collectedItemsTotal.iron, true)
+                    .addField('Gold Collected:', player.stats.bedwars.collectedItemsTotal.gold, true)
+                    .addField('Diamonds Collected:', player.stats.bedwars.collectedItemsTotal.diamond, true)
+                    .addField('Emeralds Collected:', player.stats.bedwars.collectedItemsTotal.emerald, true)
 
                 message.channel.send(embed);
             }).catch(e => {

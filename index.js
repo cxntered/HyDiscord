@@ -54,7 +54,7 @@ bot.on('message', message => {
 	}
 
 	try {
-		command.execute(message, args);
+		command.execute(message, args, bot);
 	} catch (error) {
 		console.error(error);
 		message.channel.send('There was an error trying to execute that command!');
