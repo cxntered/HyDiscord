@@ -68,7 +68,11 @@ module.exports = {
                 playerInfoEmbed.addField('Status:', playerIsOnline, true)
 
             if (player.rank.includes('MVP+')) {
-                playerInfoEmbed.addField('Plus Color:', player.plusColor.toString())
+                if (player.plusColor == null) {
+                    playerInfoEmbed.addField('Plus Color:', 'Red')
+                } else {
+                    playerInfoEmbed.addField('Plus Color:', player.plusColor)
+                }
             }
 
                 playerInfoEmbed.addField('Social Media:', `Run \`h!socials ${player.nickname}\``)
