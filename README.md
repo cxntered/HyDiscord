@@ -5,6 +5,7 @@ HyDiscord is a bot that allows you to see Hypixel stats of many things. With HyD
 * UHC and SpeedUHC stats of a user
 * Duels stats of a user
 * Watchdog stats
+* Guild stats
 
 in this one Discord Bot!
 
