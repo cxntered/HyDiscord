@@ -4,6 +4,7 @@ const { color, footer } = require('../Storages/embed.json')
 const { apikey } = require('../Storages/config.json');
 const HypixelAPIReborn = require('hypixel-api-reborn');
 const hypixelAPIReborn = new HypixelAPIReborn.Client(apikey);
+const commaNumber = require('comma-number');
 
 module.exports = {
     name: 'player',
@@ -55,7 +56,7 @@ module.exports = {
                 .setThumbnail(`https://visage.surgeplay.com/face/256/${playerUUIDData.id}.png`)
                 .addField('Rank:', playerRank, true)
                 .addField('Level:', player.level, true)
-                .addField('Karma:', player.karma, true)
+                .addField('Karma:', commaNumber(player.karma), true)
 
             if (player.guild != null) {
                 playerInfoEmbed.addField('Guild:', player.guild.name)

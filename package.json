@@ -4,8 +4,10 @@
   "description": "A Discord Bot that allows you to see Hypixel stats.",
   "main": "index.js",
   "dependencies": {
+    "comma-number": "^2.0.1",
     "discord.js": "^12.5.1",
-    "hypixel-api-reborn": "^3.1.2"
+    "hypixel-api-reborn": "^3.1.2",
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {},
   "scripts": {

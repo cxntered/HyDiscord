@@ -14,12 +14,12 @@ module.exports = {
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
                 .setImage('https://hypixel.net/styles/hypixel-v2/images/game-icons/UHC-64.png')
-                .addField('Kills:', player.stats.uhc.kills, true)
+                .addField('Kills:', commaNumber(player.stats.uhc.kills), true)
                 .addField('Level:', player.stats.uhc.starLevel, true)
-                .addField('Wins:', player.stats.uhc.wins, true)
-                .addField('Heads Eaten:', player.stats.uhc.headsEaten, true)
-                .addField('Deaths', player.stats.uhc.deaths, true)
-                .addField('Coins:', player.stats.uhc.coins, true)
+                .addField('Wins:', commaNumber(player.stats.uhc.wins), true)
+                .addField('Heads Eaten:', commaNumber(player.stats.uhc.headsEaten), true)
+                .addField('Deaths', commaNumber(player.stats.uhc.deaths), true)
+                .addField('Coins:', commaNumber(player.stats.uhc.coins), true)
 
             message.channel.send(embed);
 

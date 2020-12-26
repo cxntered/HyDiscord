@@ -2,8 +2,8 @@ const Discord = require('discord.js');
 const { color, footer } = require('../Storages/embed.json')
 const { apikey } = require('../Storages/config.json');
 const HypixelAPIReborn = require('hypixel-api-reborn');
-
 const hypixelAPIReborn = new HypixelAPIReborn.Client(apikey);
+const commaNumber = require('comma-number');
 
 module.exports = {
     name: 'speeduhc',
@@ -16,13 +16,13 @@ module.exports = {
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
                 .setImage('https://hypixel.net/styles/hypixel-v2/images/game-icons/SpeedUHC-64.png')
-                .addField('Kills:', player.stats.speedUHC.kills, true)
-                .addField('Losses:', player.stats.speedUHC.losses, true)
-                .addField('Wins:', player.stats.speedUHC.wins, true)
-                .addField('Winstreak:', player.stats.speedUHC.winstreak, true)
-                .addField('Deaths:', player.stats.speedUHC.deaths, true)
-                .addField('Games Played:', player.stats.speedUHC.playedGames, true)
-                .addField('Coins:', player.stats.speedUHC.coins, true)
+                .addField('Kills:', commaNumber(player.stats.speedUHC.kills), true)
+                .addField('Losses:', commaNumber(player.stats.speedUHC.losses), true)
+                .addField('Wins:', commaNumber(player.stats.speedUHC.wins), true)
+                .addField('Winstreak:', commaNumber(player.stats.speedUHC.winstreak), true)
+                .addField('Deaths:', commaNumber(player.stats.speedUHC.deaths), true)
+                .addField('Games Played:', commaNumber(player.stats.speedUHC.playedGames), true)
+                .addField('Coins:', commaNumber(player.stats.speedUHC.coins), true)
                 .addField('KD Ratio:', player.stats.speedUHC.KDRatio, true)
                 .addField('WL Ratio:', player.stats.speedUHC.WLRatio, true)
 
