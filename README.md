@@ -13,7 +13,7 @@ in this one Discord Bot!
 HyDiscord was made using [node.js](https://nodejs.org), [discord.js](https://discord.js.org) and [Hypixel-API-Reborn](https://www.npmjs.com/package/hypixel-api-reborn)
 
 ## How do I run it myself?
-1. Create A Discord Developer Application [here.](https://discord.com/developers/applications)
+1. Create a Discord Developer Application [here.](https://discord.com/developers/applications)
 2. Create a bot.
 3. Copy the token and save it somewhere.
 4. Clone, fork or download the repository.
