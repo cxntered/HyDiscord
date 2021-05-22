@@ -34,5 +34,9 @@ You can invite the bot [here.](https://bit.ly/HyDiscord)
 ## Support
 If you have trouble with the bot, you can either open an issue on GitHub or join the HyDiscord discord server [here.](https://bit.ly/HyDiscordServer)
 
+## License
+Please refer to the project's [license.](https://github.com/HyDiscord/HyDiscord/blob/master/LICENSE)
+
+
 ## Note
 HyDiscord is in no way affiliated with Hypixel Inc. or Hypixel Studios.
