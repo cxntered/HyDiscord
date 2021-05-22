@@ -17,10 +17,11 @@ HyDiscord was made using [node.js](https://nodejs.org), [discord.js](https://dis
 2. Create a bot.
 3. Copy the token and save it somewhere.
 4. Clone, fork or download the repository.
-5. Run `npm i` in a terminal.
-6. Open the project in a text editor. (such as VS Code or Notepad++)
-7. Add your token and your API Key to `config.json` (you can get your API Key by logging onto `mc.hypixel.net` and running `/api new`)
-8. Run `node .` in a terminal.
+5. Navigate to the repository in a terminal. (most terminals use `cd` to change directory)
+6. Run `npm i` in a terminal.
+7. Open the project in a text editor. (such as VS Code or Notepad++)
+8. Add your token and your API Key to `config.json` (you can get your API Key by logging onto `mc.hypixel.net` and running `/api new`)
+9. Run `node .` in a terminal.
 
 HyDiscord should now be running.
 
