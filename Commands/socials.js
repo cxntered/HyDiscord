@@ -8,8 +8,11 @@ const hypixelAPIReborn = new HypixelAPIReborn.Client(apikey);
 module.exports = {
     name: 'socials',
     async execute(message, args) {
+        if (!args[0]) { // if someone didn't type in ign
+            message.channel.send('You need to type in a player\'s IGN! (Example: `h!socials cxntered`)')
+        }
         hypixelAPIReborn.getPlayer(args[0]).then(async (player) => {
-            const playerUUID = await fetch(`https://api.mojang.com/users/profiles/minecraft/${args[0]}`);
+            const playerUUID = await fetch(`https://api.mojang.com/users/profiles/minecraft/${args[0]}`); // fetch uuid
             const playerUUIDData = await playerUUID.json();
 
             let embed = new Discord.MessageEmbed()
@@ -51,10 +54,12 @@ module.exports = {
             message.channel.send(embed)
 
         }).catch(e => {
-            if (e.message === HypixelAPIReborn.Errors.PLAYER_DOES_NOT_EXIST) {
+            if (e.message === HypixelAPIReborn.Errors.PLAYER_DOES_NOT_EXIST) { // error messages
                 message.channel.send('I could not find that player in the API. Check spelling and name history.')
             } else {
-                message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                if (args[0]) {
+                    message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                }
             }       
         });
     }

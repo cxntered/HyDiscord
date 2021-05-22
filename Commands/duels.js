@@ -8,7 +8,7 @@ const commaNumber = require('comma-number');
 module.exports = {
     name: 'duels',
     execute(message, args) {
-        if(!args[0]) {
+        if(!args[0]) { // if someone didn't type in gamemode
             const embed = new Discord.MessageEmbed()
                 .setTitle('Help')
                 .setColor(color)
@@ -22,6 +22,9 @@ module.exports = {
         }
 
         if (args[0] == 'classic') {
+            if (!args[1]) { // if someone didn't type in ign 
+                message.channel.send('You need to type in a player\'s IGN! (Example: `h!duels classic cxntered`)')
+            }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()
                     .setTitle('Classic Duels Stats')
@@ -35,16 +38,21 @@ module.exports = {
 
                 message.channel.send(embed);
 
-            }).catch(e => {
+            }).catch(e => { // error messages
                 if (e.message === HypixelAPIReborn.Errors.PLAYER_DOES_NOT_EXIST) {
                     message.channel.send('I could not find that player in the API. Check spelling and name history.')
                 } else {
-                    message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                    if (args[1]) {
+                        message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                    }
                 }       
             });
         } 
 
         if (args[0] == 'uhc') {
+            if (!args[1]) { // if someone didn't type in ign
+                message.channel.send('You need to type in a player\'s IGN! (Example: `h!duels uhc cxntered`)')
+            }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()
                     .setTitle('UHC Duels Stats')
@@ -58,16 +66,21 @@ module.exports = {
 
                 message.channel.send(embed);
 
-            }).catch(e => {
+            }).catch(e => { // error messages
                 if (e.message === HypixelAPIReborn.Errors.PLAYER_DOES_NOT_EXIST) {
                     message.channel.send('I could not find that player in the API. Check spelling and name history.')
                 } else {
-                    message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                    if (args[1]) {
+                        message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                    }
                 }       
             });
         }
 
         if (args[0] == 'skywars' || args[0] == 'sw') {
+            if (!args[1]) { // if someone didn't type in ign
+                message.channel.send('You need to type in a player\'s IGN! (Example: `h!duels skywars cxntered`)')
+            }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()
                     .setTitle('Skywars Duels Stats')
@@ -81,16 +94,21 @@ module.exports = {
 
                 message.channel.send(embed);
 
-            }).catch(e => {
+            }).catch(e => { // error messages
                 if (e.message === HypixelAPIReborn.Errors.PLAYER_DOES_NOT_EXIST) {
                     message.channel.send('I could not find that player in the API. Check spelling and name history.')
                 } else {
-                    message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                    if (args[1]) {
+                        message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                    }
                 }       
             });
         }
 
         if (args[0] == 'bridge') {
+            if (!args[1]) { // if someone didn't type in ign
+                message.channel.send('You need to type in a player\'s IGN! (Example: `h!duels bridge cxntered`)')
+            }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()
                     .setTitle('The Bridge Duels Stats')
@@ -104,16 +122,21 @@ module.exports = {
 
                 message.channel.send(embed);
 
-            }).catch(e => {
+            }).catch(e => { // error messages
                 if (e.message === HypixelAPIReborn.Errors.PLAYER_DOES_NOT_EXIST) {
                     message.channel.send('I could not find that player in the API. Check spelling and name history.')
                 } else {
-                    message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                    if (args[1]) {
+                        message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                    }
                 }       
             });
         }
 
         if (args[0] == 'sumo') {
+            if (!args[1]) { // if someone didn't type in ign
+                message.channel.send('You need to type in a player\'s IGN! (Example: `h!duels sumo cxntered`)')
+            }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()
                     .setTitle('Sumo Duels Stats')
@@ -127,16 +150,21 @@ module.exports = {
 
                 message.channel.send(embed);
 
-            }).catch(e => {
+            }).catch(e => { // error messages
                 if (e.message === HypixelAPIReborn.Errors.PLAYER_DOES_NOT_EXIST) {
                     message.channel.send('I could not find that player in the API. Check spelling and name history.')
                 } else {
-                    message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                    if (args[1]) {
+                        message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                    }
                 }       
             });
         }
 
         if (args[0] == 'op') {
+            if (!args[1]) { // if someone didn't type in ign
+                message.channel.send('You need to type in a player\'s IGN! (Example: `h!duels op cxntered`)')
+            }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()
                     .setTitle('OP Duels Stats')
@@ -150,16 +178,21 @@ module.exports = {
 
                 message.channel.send(embed);
 
-            }).catch(e => {
+            }).catch(e => { // error messages
                 if (e.message === HypixelAPIReborn.Errors.PLAYER_DOES_NOT_EXIST) {
                     message.channel.send('I could not find that player in the API. Check spelling and name history.')
                 } else {
-                    message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                    if (args[1]) {
+                        message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                    }
                 }       
             });
         }
 
         if (args[0] == 'combo') {
+            if (!args[1]) { // if someone didn't type in ign
+                message.channel.send('You need to type in a player\'s IGN! (Example: `h!duels combo cxntered`)')
+            }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()
                     .setTitle('Combo Duels Stats')
@@ -172,11 +205,13 @@ module.exports = {
 
                 message.channel.send(embed);
 
-            }).catch(e => {
+            }).catch(e => { // error messages
                 if (e.message === HypixelAPIReborn.Errors.PLAYER_DOES_NOT_EXIST) {
                     message.channel.send('I could not find that player in the API. Check spelling and name history.')
                 } else {
-                    message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                    if (args[1]) {
+                        message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                    }
                 }       
             });
         }

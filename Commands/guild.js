@@ -7,7 +7,10 @@ const hypixelAPIReborn = new HypixelAPIReborn.Client(apikey);
 module.exports = {
     name: 'guild',
     async execute(message, args) {
-        let guildName = args.join(' ');
+        let guildName = args.join(' '); // for guilds with spaces in name
+        if (!args[0]) { // if someone didn't type in guild name
+            message.channel.send('You need to type in a guild\'s name! (Not guild tag, but guild name.) (Example: `h!guild Rebel`)')
+        }
         hypixelAPIReborn.getGuild('name', guildName).then(async (guild) => {
             const createdAtDate = new Date(guild.createdAtTimestamp);
             const createdAt = createdAtDate.toLocaleString()
@@ -27,11 +30,13 @@ module.exports = {
                 }
 
             message.channel.send(guildInfoEmbed);
-        }).catch(e => {
+        }).catch(e => { // error messages
             if (e.message === HypixelAPIReborn.Errors.GUILD_DOES_NOT_EXIST) {
                 message.channel.send('I could not find that guild in the API. Check spelling and name history.')
             } else {
-                message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                if (args[0]) {
+                    message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                }
             }       
         });
     }

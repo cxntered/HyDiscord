@@ -9,6 +9,9 @@ module.exports = {
     name: 'bedwars',
     aliases: [ "bw" ],
     execute(message, args) {
+            if (!args[0]) { // if someone didn't type in ign
+                message.channel.send('You need to type in a player\'s IGN! (Example: `h!bedwars cxntered`)')
+            }
             hypixelAPIReborn.getPlayer(args[0]).then((player) => {
                 const embed = new Discord.MessageEmbed()
                     .setTitle('BedWars Stats')
@@ -36,11 +39,13 @@ module.exports = {
                     .addField('Emeralds Collected:', commaNumber(player.stats.bedwars.collectedItemsTotal.emerald), true)
 
                 message.channel.send(embed);
-            }).catch(e => {
+            }).catch(e => { // error messages
                 if (e.message === HypixelAPIReborn.Errors.PLAYER_DOES_NOT_EXIST) {
                     message.channel.send('I could not find that player in the API. Check spelling and name history.')
                 } else {
-                    message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                    if (args[0]) {
+                        message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                    }
                 }       
             });
     }

@@ -1,10 +1,10 @@
-const Discord = require('discord.js');
+const Discord = require('discord.js'); 
 const {Client, Attachment, MessageEmbed} = require('discord.js');
 const bot = new Discord.Client();
 const fs = require('fs');
 const { prefix, token } = require('./Storages/config.json');
 
-bot.commands = new Discord.Collection();
+bot.commands = new Discord.Collection(); // for command handler
 const commandFiles = fs.readdirSync('./Commands/').filter(file => file.endsWith('.js'));
 for(const file of commandFiles){
     const command = require(`./Commands/${file}`);
@@ -12,9 +12,9 @@ for(const file of commandFiles){
 }
 
 
-bot.on('ready', () =>{
+bot.on('ready', () =>{ // sets status
 	console.log(`Logged in as ${bot.user.tag}`)
-	bot.user.setPresence({
+	bot.user.setPresence({ 
 		status: 'online',
 		activity: {
 			name: 'h!help | Made by cxntered',
@@ -23,7 +23,7 @@ bot.on('ready', () =>{
 	})
 })
 
-setInterval(function presenceReset() {
+setInterval(function presenceReset() { // resets status every 24 hours to prevent status from disappearing (could be bug with how i write my code)
 	bot.user.setPresence({
 		status: 'online',
 		activity: {
@@ -33,12 +33,12 @@ setInterval(function presenceReset() {
 	})
 }, 86400000)
 
-bot.on('guildCreate', guild => {
+bot.on('guildCreate', guild => { // invite message
     const channel = guild.channels.cache.find(channel => channel.type === 'text' && channel.permissionsFor(guild.me).has('SEND_MESSAGES'))
     channel.send("**Thank you for adding me!** \n`-` My prefix is `h!` \n`-` You can see all commands by typing `h!help` \n`-` Join the HyDiscord server! `h!invite`")
 })
 
-bot.on('message', message => {
+bot.on('message', message => { // command handler
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).trim().split(/ +/);

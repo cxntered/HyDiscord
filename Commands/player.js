@@ -9,8 +9,11 @@ const commaNumber = require('comma-number');
 module.exports = {
     name: 'player',
     async execute(message, args) {
+        if (!args[0]) { // if someone didn't type in ign
+            message.channel.send('You need to type in a player\'s IGN! (Example: `h!player cxntered`)')
+        }
         hypixelAPIReborn.getPlayer(args[0], { guild: true }).then(async (player) => {
-            const playerUUID = await fetch(`https://api.mojang.com/users/profiles/minecraft/${args[0]}`);
+            const playerUUID = await fetch(`https://api.mojang.com/users/profiles/minecraft/${args[0]}`); // fetch uuid
             const playerUUIDData = await playerUUID.json();
 
             playerIsOnline = "";
@@ -43,11 +46,11 @@ module.exports = {
                 playerRank = player.rank;
             }
 
-            const firstLDate = new Date(player.firstLogin);
-            const lastLDate = new Date(player.lastLogin);
+            const firstLDate = new Date(player.firstLogin); // fetch first login date and time
+            const lastLDate = new Date(player.lastLogin); // fetch last login date and time
 
-            const firstL = firstLDate.toLocaleString()
-            const lastL = lastLDate.toLocaleString()
+            const firstL = firstLDate.toLocaleString() // convert into cleaner date and time
+            const lastL = lastLDate.toLocaleString() // convert into cleaner date and time
 
             const playerInfoEmbed = new Discord.MessageEmbed()
                 .setTitle('Player Stats')
@@ -79,11 +82,13 @@ module.exports = {
                 playerInfoEmbed.setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
 
             message.channel.send(playerInfoEmbed);
-        }).catch(e => {
+        }).catch(e => { // error messages
             if (e.message === HypixelAPIReborn.Errors.PLAYER_DOES_NOT_EXIST) {
                 message.channel.send('I could not find that player in the API. Check spelling and name history.')
             } else {
-                message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                if (args[0]) {
+                    message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                }
             }       
         });
     }

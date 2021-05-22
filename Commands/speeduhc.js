@@ -9,6 +9,9 @@ module.exports = {
     name: 'speeduhc',
     aliases: ['suhc'],
     execute(message, args) {
+        if (!args[0]) { // if someone didn't type in ign
+            message.channel.send('You need to type in a player\'s IGN! (Example: `h!speeduhc cxntered`)')
+        }
         hypixelAPIReborn.getPlayer(args[0]).then((player) => {
             const embed = new Discord.MessageEmbed()
                 .setTitle(`SpeedUHC Stats`)
@@ -28,11 +31,13 @@ module.exports = {
 
             message.channel.send(embed);
 
-        }).catch(e => {
+        }).catch(e => { // error messages
             if (e.message === HypixelAPIReborn.Errors.PLAYER_DOES_NOT_EXIST) {
                 message.channel.send('I could not find that player in the API. Check spelling and name history.')
             } else {
-                message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                if (args[0]) {
+                    message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                }
             }       
         });
     }

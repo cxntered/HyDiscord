@@ -9,7 +9,7 @@ module.exports = {
         .addField('HyDiscord Server', 'https://bit.ly/HyDiscordServer')
         .setColor(color)
         .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
-        message.channel.send('I sent you a DM containing the information!')
+        message.channel.send('I sent you a DM containing the information!') // dm sent message
         message.author.send(embed)
     }
 }
