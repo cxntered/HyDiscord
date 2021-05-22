@@ -244,13 +244,13 @@ module.exports = {
             case 'suggest':
             case 'suggestion':
             case 'suggestfeature':
-                const namehistory = new Discord.MessageEmbed()
+                const suggest = new Discord.MessageEmbed()
                 .setTitle('Help')
                 .addField('h!suggest', '`h!suggest` will let you suggest a feature to be added to HyDiscord')
                 .addField('Aliases', '`h!suggestion`, `h!suggestfeature`')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
-                message.author.send(namehistory)
+                message.author.send(suggest)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
                     message.channel.send('I sent you a DM containing the information!')
@@ -260,12 +260,12 @@ module.exports = {
                 });
             break;
             case 'rng':
-                const guild = new Discord.MessageEmbed()
+                const rng = new Discord.MessageEmbed()
                 .setTitle('Help')
                 .addField('h!rng', '`h!rng` will pick a random number between two numbers you choose')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
-                message.author.send(guild)
+                message.author.send(rng)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
                     message.channel.send('I sent you a DM containing the information!')
@@ -275,12 +275,12 @@ module.exports = {
                 });
             break;
             case 'coinflip':
-                const guild = new Discord.MessageEmbed()
+                const coinflip = new Discord.MessageEmbed()
                 .setTitle('Help')
                 .addField('h!coinflip', '`h!coinflip` will flip a coin for you')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
-                message.author.send(guild)
+                message.author.send(coinflip)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
                     message.channel.send('I sent you a DM containing the information!')
