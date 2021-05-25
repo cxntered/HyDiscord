@@ -143,6 +143,36 @@ module.exports = {
                     message.channel.send('I could not send the DM. Check if you have DMs disabled.')
                 });
             break;
+            case 'duels':
+                const duels = new Discord.MessageEmbed()
+                .setTitle('Help')
+                .addField('h!duels', '`h!duels` will show you the Duels stats of a user')
+                .setColor(color)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.author.send(duels)
+                .then(() => { // dm sent message
+                    if (message.channel.type === 'dm') return;
+                    message.channel.send('I sent you a DM containing the information!')
+                })
+                .catch(e => { // error message
+                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                });
+            break;
+            case 'socials':
+                const socials = new Discord.MessageEmbed()
+                .setTitle('Help')
+                .addField('h!socials', '`h!socials` will show you the social medias of a user')
+                .setColor(color)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.author.send(socials)
+                .then(() => { // dm sent message
+                    if (message.channel.type === 'dm') return;
+                    message.channel.send('I sent you a DM containing the information!')
+                })
+                .catch(e => { // error message
+                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                });
+            break;
             case 'skywars':
             case 'sw':
                 const skywars = new Discord.MessageEmbed()
