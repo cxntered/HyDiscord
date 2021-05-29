@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
 const { color, footer } = require('../Storages/embed.json')
+const { apikey } = require('../Storages/config.json');
 const HypixelAPIReborn = require('hypixel-api-reborn');
-const hypixelAPIReborn = new HypixelAPIReborn.Client('8b3c888e-e8cf-4786-a685-033fef4ed270');
+const hypixelAPIReborn = new HypixelAPIReborn.Client(apikey);
 const commaNumber = require('comma-number');
 
 module.exports = {
