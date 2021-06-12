@@ -4,7 +4,7 @@ module.exports = {
     guildOnly: true,
     execute(message, args){
         const user = message.mentions.users.first();
-        if(!message.member.hasPermission(["BAN_MEMBERS", "ADMINISTRATOR"])) return message.channel.send("You do not have permission to do this!") // permission check
+        if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("You do not have permission to do this!") // permission check
         if(user){
             const member = message.guild.member(user);
             if(member){
