@@ -11,10 +11,12 @@ module.exports = {
         
         const playerUUIDFetch = await fetch(`https://api.mojang.com/users/profiles/minecraft/${args[0]}`); // fetch uuid 
         const playerUUIDData = await playerUUIDFetch.json(); 
+        const playerUsername = await fetch(`https://api.mojang.com/user/profiles/${playerUUIDData.id}/names`); // just for username :upside_down:
+        const playerUsernameData = await playerUsername.json();
 
         const embed = new Discord.MessageEmbed()
             .setAuthor('Skin', 'https://i.imgur.com/OuoECfX.jpeg')
-            .addField('Username', `\`${args[0]}\``)
+            .addField('Username', `\`${playerUsernameData[playerUsernameData.length - 1].name}\``)
             .addField('Apply Skin', `[Link](https://www.minecraft.net/en-us/profile/skin/remote?url=https://crafatar.com/skins/${playerUUIDData.id})`)
             .setThumbnail(`https://crafatar.com/skins/${playerUUIDData.id}`)
             .setImage(`https://visage.surgeplay.com/full/${playerUUIDData.id}.png`)
