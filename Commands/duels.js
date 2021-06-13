@@ -10,7 +10,7 @@ module.exports = {
     execute(message, args) {
         if(!args[0]) { // if someone didn't type in gamemode
             const embed = new Discord.MessageEmbed()
-                .setTitle('Help')
+                .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
                 .setColor(color)
                 .addField('h!duels', '`h!duels` lets you see duels stats about a player.')
                 .addField('Usage', '`h!duels classic` \n`h!duels uhc`\n`h!duels skywars`\n`h!duels bridge`\n`h!duels sumo`\n`h!duels op`\n`h!duels combo`')
@@ -27,7 +27,7 @@ module.exports = {
             }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()
-                    .setTitle('Classic Duels Stats')
+                    .setAuthor('Classic Duels Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                     .setDescription(`[${player.rank}] ${player.nickname}`)
                     .setColor(color)
                     .addField('Kills:', commaNumber(player.stats.duels.classic.kills))
@@ -55,7 +55,7 @@ module.exports = {
             }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()
-                    .setTitle('UHC Duels Stats')
+                    .setAuthor('UHC Duels Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                     .setDescription(`[${player.rank}] ${player.nickname}`)
                     .setColor(color)
                     .addField('Kills:', commaNumber(player.stats.duels.uhc.v1.kills))
@@ -83,7 +83,7 @@ module.exports = {
             }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()
-                    .setTitle('Skywars Duels Stats')
+                    .setAuthor('SkyWars Duels Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                     .setDescription(`[${player.rank}] ${player.nickname}`)
                     .setColor(color)
                     .addField('Kills:', commaNumber(player.stats.duels.skywars.v1.kills))
@@ -111,7 +111,7 @@ module.exports = {
             }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()
-                    .setTitle('The Bridge Duels Stats')
+                    .setAuthor('The Bridge Duels Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                     .setDescription(`[${player.rank}] ${player.nickname}`)
                     .setColor(color)
                     .addField('Kills:', commaNumber(player.stats.duels.bridge.v1.kills))
@@ -139,7 +139,7 @@ module.exports = {
             }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()
-                    .setTitle('Sumo Duels Stats')
+                    .setAuthor('Sumo Duels Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                     .setDescription(`[${player.rank}] ${player.nickname}`)
                     .setColor(color)
                     .addField('Kills:', commaNumber(player.stats.duels.sumo.kills))
@@ -167,7 +167,7 @@ module.exports = {
             }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()
-                    .setTitle('OP Duels Stats')
+                    .setAuthor('OP Duels Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                     .setDescription(`[${player.rank}] ${player.nickname}`)
                     .setColor(color)
                     .addField('Kills:', commaNumber(player.stats.duels.op.v1.kills))
@@ -195,7 +195,7 @@ module.exports = {
             }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()
-                    .setTitle('Combo Duels Stats')
+                    .setAuthor('Combo Duels Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                     .setColor(color)
                     .addField('Kills:', commaNumber(player.stats.duels.combo.kills))
                     .addField('Losses:', commaNumber(player.stats.duels.combo.losses))

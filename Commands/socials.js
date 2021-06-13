@@ -16,10 +16,10 @@ module.exports = {
             const playerUUIDData = await playerUUID.json();
 
             let embed = new Discord.MessageEmbed()
-                .setTitle('Social Media')
+                .setAuthor('Social Media', 'https://i.imgur.com/OuoECfX.jpeg')
                 .setDescription(`[${player.rank}] ${player.nickname}`)
                 .setColor(color)
-                .setThumbnail(`https://visage.surgeplay.com/face/256/${playerUUIDData.id}.png`)
+                .setThumbnail(`https://crafatar.com/avatars/${playerUUIDData.id}?overlay&size=256`)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
 
 

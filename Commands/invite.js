@@ -4,7 +4,7 @@ module.exports = {
     name: 'invite',
     execute(message, args){
         const embed = new Discord.MessageEmbed()
-        .setTitle('Invite')
+        .setAuthor('Invite', 'https://i.imgur.com/OuoECfX.jpeg')
         .addField('HyDiscord', 'https://bit.ly/HyDiscord')
         .addField('HyDiscord Server', 'https://bit.ly/HyDiscordServer')
         .setColor(color)

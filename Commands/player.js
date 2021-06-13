@@ -53,10 +53,10 @@ module.exports = {
             const lastL = lastLDate.toLocaleString() // convert into cleaner date and time
 
             const playerInfoEmbed = new Discord.MessageEmbed()
-                .setTitle('Player Stats')
+                .setAuthor('Player Stats', 'https://i.imgur.com/OuoECfX.jpeg')              
                 .setDescription(`[${player.rank}] ${player.nickname}`)
                 .setColor(color)
-                .setThumbnail(`https://visage.surgeplay.com/face/256/${playerUUIDData.id}.png`)
+                .setThumbnail(`https://crafatar.com/avatars/${playerUUIDData.id}?overlay&size=256`)
                 .addField('Rank:', playerRank, true)
                 .addField('Level:', player.level, true)
                 .addField('Karma:', commaNumber(player.karma), true)

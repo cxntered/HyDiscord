@@ -11,7 +11,7 @@ module.exports = {
     execute(message, args) {
         hypixelAPIReborn.getWatchdogStats().then((stats) => {
             const watchdogStatsEmbed = new Discord.MessageEmbed()
-                .setTitle('Watchdog Stats')
+                .setAuthor('Watchdog Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
                 .addField('Total Watchdog bans:', commaNumber(stats.byWatchdogTotal), true)

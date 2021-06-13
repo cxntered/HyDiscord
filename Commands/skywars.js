@@ -14,7 +14,7 @@ module.exports = {
             }
             hypixelAPIReborn.getPlayer(args[0]).then((player) => {
                 const embed = new Discord.MessageEmbed()
-                    .setTitle('SkyWars Stats')
+                    .setAuthor('SkyWars Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                     .setDescription(`[${player.rank}] ${player.nickname}`)
                     .setColor(color)
                     .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')

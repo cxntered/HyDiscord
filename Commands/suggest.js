@@ -13,7 +13,7 @@ module.exports = {
         let suggestion = args.join(' '); // for suggestions with spaces
 
         let embed = new Discord.MessageEmbed()
-            .setTitle('New Suggestion')
+            .setAuthor('New Suggestion', 'https://i.imgur.com/OuoECfX.jpeg')
             .setColor(color)
             .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
             .addField('Suggester:', message.author.tag)

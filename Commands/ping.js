@@ -5,4 +5,4 @@ module.exports = {
         var ping = Date.now() - message.createdTimestamp + " ms"; // ping check
         message.channel.send("Pong! `" + `${Date.now() - message.createdTimestamp}` + " ms`");
   }
-    }
+}

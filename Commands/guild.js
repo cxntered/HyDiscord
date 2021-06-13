@@ -16,7 +16,7 @@ module.exports = {
             const createdAt = createdAtDate.toLocaleString()
 
             const guildInfoEmbed = new Discord.MessageEmbed()
-                .setTitle('Guild Stats')
+                .setAuthor('Guild Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
                 .addField('Level:', guild.level, true)
