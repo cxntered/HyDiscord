@@ -1,12 +1,14 @@
 # HyDiscord
-HyDiscord is a bot that allows you to see Hypixel stats of many things. With HyDiscord, you can see:
-* BedWars stats of a user
-* SkyWars stats of a user
-* UHC and SpeedUHC stats of a user
-* Duels stats of a user
-* Name history of a user
-* Social medias of a user
-* User stats
+HyDiscord is a bot that allows you to see Hypixel stats of many people and many things. With HyDiscord, you can see:
+* BedWars stats of a player
+* SkyWars stats of a player
+* UHC and SpeedUHC stats of a player
+* Duels stats of a player
+* Name history of a player
+* Social medias of a player
+* Player stats
+* Skin of a player
+* UUID of a player
 * Watchdog stats
 * Guild stats
 
