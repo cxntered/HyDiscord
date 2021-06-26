@@ -8,7 +8,7 @@ module.exports = {
         .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
         .addField('Hypixel 🎮', '`h!player` \n`h!guild` \n`h!bedwars` \n`h!skywars` \n`h!duels` \n`h!uhc` \n`h!speeduhc` \n`h!watchdog` \n`h!socials` \n`h!namehistory` \n`h!uuid` \n`h!skin` \n`h!server`', true)
         .addField('Utility 🛠', '`h!help` \n`h!members` \n`h!ping` \n`h!invite` \n`h!clear` \n`h!ban` \n`h!kick` \n`h!suggest` \n`h!coinflip` \n`h!rng`', true) 
-        .setDescription('Do `!help [command]` to see what that command does.')
+        .setDescription('Do `h!help [command]` to see what that command does.')
         .setColor(color)
         .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
         message.author.send(embed)
