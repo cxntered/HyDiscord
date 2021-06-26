@@ -27,10 +27,15 @@ module.exports = {
                 embed.addField('Clean MOTD', `\`${MOTDData.motd.clean[0]}\``)
             }
 
-            embed.addField('Raw MOTD', `\`${serverData.description}\``)
+            if (MOTDData.motd.raw[1] !== undefined) {
+                const rawMOTD = `\n ${MOTDData.motd.raw[1]}`
+                embed.addField('Raw MOTD', `\`${MOTDData.motd.raw[0]}${rawMOTD}\``)
+            } else if (MOTDData.motd.clean[1] == undefined) {
+                embed.addField('Raw MOTD', `\`${MOTDData.motd.raw[0]}\``)
+            }
         message.channel.send(embed)
         } catch {
-            message.channel.send('An error has occurred. Check spelling and name history. If the error persists and you are certain that the IGN is correct, please make a support ticket in the server. `h!invite`')
+            message.channel.send('An error has occurred. Check the IP address. If the error persists and you are certain that the IP is correct, please make a support ticket in the server. `h!invite`')
         }
 
   }
