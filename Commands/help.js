@@ -271,6 +271,21 @@ module.exports = {
                     message.channel.send('I could not send the DM. Check if you have DMs disabled.')
                 });
             break;
+            case 'server':
+                const server = new Discord.MessageEmbed()
+                .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
+                .addField('h!server', '`h!server` will show you info about a server')
+                .setColor(color)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.author.send(server)
+                .then(() => { // dm sent message
+                    if (message.channel.type === 'dm') return;
+                    message.channel.send('I sent you a DM containing the information!')
+                })
+                .catch(e => { // error message
+                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                });
+            break;
             case 'suggest':
             case 'suggestion':
             case 'suggestfeature':
