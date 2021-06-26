@@ -30,7 +30,7 @@ module.exports = {
             embed.addField('Raw MOTD', `\`${serverData.description}\``)
         message.channel.send(embed)
         } catch {
-            message.channel.send('An error has occurred. Check spelling and name history. If the error persists and you are certain that the IGN is correct, please make a support ticket in the server. `h!invite`')
+            message.channel.send('An error has occurred. Check the IP address. If the error persists and you are certain that the IP is correct, please make a support ticket in the server. `h!invite`')
         }
 
   }
