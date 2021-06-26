@@ -24,7 +24,7 @@ module.exports = {
             .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
         message.channel.send(embed)
         } catch {
-            message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+            message.channel.send('An error has occurred. Check spelling and name history. If the error persists and you are certain that the IGN is correct, please make a support ticket in the server. `h!invite`')
         }
     }
 }

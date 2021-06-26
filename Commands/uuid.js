@@ -4,6 +4,7 @@ const { color, footer } = require ('../Storages/embed.json')
 module.exports = {
     name: 'uuid',
     async execute(message, args){
+        try {
         if(!args[0]) { // if someone didn't type in ign
             return message.channel.send('You need to type in a player\'s IGN! (Example: `h!uuid cxntered`)')
         }
@@ -20,5 +21,8 @@ module.exports = {
         .setColor(color)
         .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
         message.channel.send(embed)
+        } catch {
+            message.channel.send('An error has occurred. Check spelling and name history. If the error persists and you are certain that the IGN is correct, please make a support ticket in the server. `h!invite`')
+        }
     }
 }
