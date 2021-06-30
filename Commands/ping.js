@@ -1,8 +1,13 @@
 const Discord = require('discord.js');
+const { color, footer } = require('../Storages/embed.json')
 module.exports = {
     name: 'ping',
     execute(message, args){
-        var ping = Date.now() - message.createdTimestamp + " ms"; // ping check
-        message.channel.send("Pong! `" + `${Date.now() - message.createdTimestamp}` + " ms`");
+        const embed = new Discord.MessageEmbed()
+          .setAuthor('Ping', 'https://i.imgur.com/OuoECfX.jpeg')
+          .setDescription("Pong! `" + `${Date.now() - message.createdTimestamp}` + " ms`")
+          .setColor(color)
+          .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+        message.channel.send(embed)
   }
 }

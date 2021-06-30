@@ -12,7 +12,7 @@ module.exports = {
 
         let suggestion = args.join(' '); // for suggestions with spaces
 
-        let embed = new Discord.MessageEmbed()
+        let suggestionEmbed = new Discord.MessageEmbed()
             .setAuthor('New Suggestion', 'https://i.imgur.com/OuoECfX.jpeg')
             .setColor(color)
             .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
@@ -20,7 +20,12 @@ module.exports = {
             .addField('Suggestion:', suggestion)
 
         const channel = bot.guilds.cache.find(g => g.id == 776730779128037376).channels.cache.find(c => c.id == 790867974662783006); // find HyDiscord server and find suggestions channel
-        channel.send(embed); // send suggestion to channel
-        message.channel.send('Your suggestion has been submitted!')
+        channel.send(suggestionEmbed); // send suggestion to channel
+        const embed = new Discord.MessageEmbed()
+            .setAuthor('Suggestion', 'https://i.imgur.com/OuoECfX.jpeg')
+            .setDescription('Your suggestion has been submitted!')
+            .setColor(color)
+            .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+        message.channel.send(embed)
     }
 }

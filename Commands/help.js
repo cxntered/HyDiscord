@@ -1,26 +1,51 @@
 const Discord = require('discord.js');
 const { color, footer } = require('../Storages/embed.json')
+const dmSent = new Discord.MessageEmbed()
+    .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
+    .setDescription('I sent you a DM containing the information!')
+    .setColor(color)
+    .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+const dmError = new Discord.MessageEmbed()
+    .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
+    .setDescription('I could not send the DM. Check if you have DMs disabled. \n(Right Click Server Icon > Privacy Settings > Enable "Allow direct messages from server members.")')
+    .setColor(color)
+    .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
 module.exports = {
     name: 'help',
     execute(message, args){
         if(!args[0]){ // general help message
         const embed = new Discord.MessageEmbed()
         .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
-        .addField('Hypixel 🎮', '`h!player` \n`h!guild` \n`h!bedwars` \n`h!skywars` \n`h!duels` \n`h!uhc` \n`h!speeduhc` \n`h!watchdog` \n`h!socials` \n`h!namehistory` \n`h!uuid` \n`h!skin`', true)
+        .addField('Hypixel 🎮', '`h!player` \n`h!guild` \n`h!bedwars` \n`h!skywars` \n`h!duels` \n`h!uhc` \n`h!speeduhc` \n`h!watchdog` \n`h!socials` \n`h!namehistory` \n`h!uuid` \n`h!skin` \n`h!server`', true)
         .addField('Utility 🛠', '`h!help` \n`h!members` \n`h!ping` \n`h!invite` \n`h!clear` \n`h!ban` \n`h!kick` \n`h!suggest` \n`h!coinflip` \n`h!rng`', true) 
-        .setDescription('Do `!help [command]` to see what that command does.')
+        .setDescription('Do `h!help [command]` to see what that command does.')
         .setColor(color)
         .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
         message.author.send(embed)
         .then(() => {
             if (message.channel.type === 'dm') return;
-            message.channel.send('I sent you a DM containing the information!')
+            message.channel.send(dmSent)
         })
         .catch(e => {
-            message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+            message.channel.send(dmError)
         });
         }
         switch(args[0]) { // specific command help
+            case 'help':
+                const help = new Discord.MessageEmbed()
+                .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
+                .addField('h!help', '`h!help` will you a list of commands.')
+                .setColor(color)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.author.send(help)
+                .then(() => { // dm sent message
+                    if (message.channel.type === 'dm') return;
+                    message.channel.send(dmSent)
+                })
+                .catch(e => { // error message
+                    message.channel.send(dmError)
+                });
+            break;
             case 'ping':
                 const ping = new Discord.MessageEmbed()
                 .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
@@ -30,10 +55,10 @@ module.exports = {
                 message.author.send(ping)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'members':
@@ -45,10 +70,10 @@ module.exports = {
                 message.author.send(members)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'invite':
@@ -60,10 +85,10 @@ module.exports = {
                 message.author.send(invite)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'ban':
@@ -75,10 +100,10 @@ module.exports = {
                 message.author.send(ban)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'kick':
@@ -90,25 +115,27 @@ module.exports = {
                 message.author.send(kick)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'clear':
+            case 'purge':
                 const clear = new Discord.MessageEmbed()
                 .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
                 .addField('h!clear', '`h!clear` will clear a specific number of messages you specify')
+                .addField('Aliases', '`h!purge`')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
                 message.author.send(clear)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'player':
@@ -120,10 +147,10 @@ module.exports = {
                 message.author.send(player)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'bedwars':
@@ -137,10 +164,10 @@ module.exports = {
                 message.author.send(bedwars)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'duels':
@@ -152,10 +179,10 @@ module.exports = {
                 message.author.send(duels)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'socials':
@@ -167,10 +194,10 @@ module.exports = {
                 message.author.send(socials)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'skywars':
@@ -184,10 +211,10 @@ module.exports = {
                 message.author.send(skywars)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'uhc':
@@ -199,10 +226,10 @@ module.exports = {
                 message.author.send(uhc)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'speeduhc':
@@ -216,10 +243,10 @@ module.exports = {
                 message.author.send(speeduhc)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'watchdog':
@@ -233,10 +260,10 @@ module.exports = {
                 message.author.send(watchdog)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'namehistory':
@@ -250,10 +277,10 @@ module.exports = {
                 message.author.send(namehistory)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'guild':
@@ -265,10 +292,10 @@ module.exports = {
                 message.author.send(guild)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'server':
@@ -280,10 +307,10 @@ module.exports = {
                 message.author.send(server)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'suggest':
@@ -298,25 +325,27 @@ module.exports = {
                 message.author.send(suggest)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'rng':
+            case 'random':
                 const rng = new Discord.MessageEmbed()
                 .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
                 .addField('h!rng', '`h!rng` will pick a random number between two numbers you choose')
+                .addField('Aliases', '`h!random`')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
                 message.author.send(rng)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'coinflip':
@@ -328,10 +357,10 @@ module.exports = {
                 message.author.send(coinflip)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'uuid':
@@ -343,10 +372,10 @@ module.exports = {
                 message.author.send(uuid)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
             case 'skin':
@@ -358,10 +387,10 @@ module.exports = {
                 message.author.send(skin)
                 .then(() => { // dm sent message
                     if (message.channel.type === 'dm') return;
-                    message.channel.send('I sent you a DM containing the information!')
+                    message.channel.send(dmSent)
                 })
                 .catch(e => { // error message
-                    message.channel.send('I could not send the DM. Check if you have DMs disabled.')
+                    message.channel.send(dmError)
                 });
             break;
         }

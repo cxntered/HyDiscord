@@ -47,7 +47,12 @@ module.exports = {
 
         message.channel.send(embed); 
         } catch {
-            message.channel.send('An error has occurred. Check spelling and name history. If the error persists and you are certain that the IGN is correct, please make a support ticket in the server. `h!invite`')
+            const error = new Discord.MessageEmbed()
+                .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                .setDescription('An error has occurred. Check spelling and name history. If the error persists and you are certain that the IGN is correct, please make a support ticket in the server. `h!invite`')
+                .setColor(color)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+            message.channel.send(error)
         }
     }
 }

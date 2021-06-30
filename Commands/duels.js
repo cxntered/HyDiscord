@@ -40,10 +40,20 @@ module.exports = {
 
             }).catch(e => { // error messages
                 if (e.message === HypixelAPIReborn.Errors.PLAYER_DOES_NOT_EXIST) {
-                    message.channel.send('I could not find that player in the API. Check spelling and name history.')
+                    const player404 = new Discord.MessageEmbed()
+                        .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                        .setDescription('I could not find that player in the API. Check spelling and name history.')
+                        .setColor(color)
+                        .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                    message.channel.send(player404)
                 } else {
                     if (args[1]) {
-                        message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                        const error = new Discord.MessageEmbed()
+                        .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                        .setDescription('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                        .setColor(color)
+                        .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                        message.channel.send(error)
                     }
                 }       
             });
@@ -68,10 +78,20 @@ module.exports = {
 
             }).catch(e => { // error messages
                 if (e.message === HypixelAPIReborn.Errors.PLAYER_DOES_NOT_EXIST) {
-                    message.channel.send('I could not find that player in the API. Check spelling and name history.')
+                    const player404 = new Discord.MessageEmbed()
+                        .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                        .setDescription('I could not find that player in the API. Check spelling and name history.')
+                        .setColor(color)
+                        .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                    message.channel.send(player404)
                 } else {
                     if (args[1]) {
-                        message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                        const error = new Discord.MessageEmbed()
+                        .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                        .setDescription('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                        .setColor(color)
+                        .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                        message.channel.send(error)
                     }
                 }       
             });
@@ -96,10 +116,20 @@ module.exports = {
 
             }).catch(e => { // error messages
                 if (e.message === HypixelAPIReborn.Errors.PLAYER_DOES_NOT_EXIST) {
-                    message.channel.send('I could not find that player in the API. Check spelling and name history.')
+                    const player404 = new Discord.MessageEmbed()
+                        .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                        .setDescription('I could not find that player in the API. Check spelling and name history.')
+                        .setColor(color)
+                        .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                    message.channel.send(player404)
                 } else {
                     if (args[1]) {
-                        message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                        const error = new Discord.MessageEmbed()
+                        .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                        .setDescription('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                        .setColor(color)
+                        .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                        message.channel.send(error)
                     }
                 }       
             });
@@ -124,10 +154,20 @@ module.exports = {
 
             }).catch(e => { // error messages
                 if (e.message === HypixelAPIReborn.Errors.PLAYER_DOES_NOT_EXIST) {
-                    message.channel.send('I could not find that player in the API. Check spelling and name history.')
+                    const player404 = new Discord.MessageEmbed()
+                        .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                        .setDescription('I could not find that player in the API. Check spelling and name history.')
+                        .setColor(color)
+                        .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                    message.channel.send(player404)
                 } else {
                     if (args[1]) {
-                        message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                        const error = new Discord.MessageEmbed()
+                        .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                        .setDescription('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                        .setColor(color)
+                        .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                        message.channel.send(error)
                     }
                 }       
             });
@@ -152,10 +192,20 @@ module.exports = {
 
             }).catch(e => { // error messages
                 if (e.message === HypixelAPIReborn.Errors.PLAYER_DOES_NOT_EXIST) {
-                    message.channel.send('I could not find that player in the API. Check spelling and name history.')
+                    const player404 = new Discord.MessageEmbed()
+                        .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                        .setDescription('I could not find that player in the API. Check spelling and name history.')
+                        .setColor(color)
+                        .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                    message.channel.send(player404)
                 } else {
                     if (args[1]) {
-                        message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                        const error = new Discord.MessageEmbed()
+                        .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                        .setDescription('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                        .setColor(color)
+                        .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                        message.channel.send(error)
                     }
                 }       
             });
@@ -180,10 +230,20 @@ module.exports = {
 
             }).catch(e => { // error messages
                 if (e.message === HypixelAPIReborn.Errors.PLAYER_DOES_NOT_EXIST) {
-                    message.channel.send('I could not find that player in the API. Check spelling and name history.')
+                    const player404 = new Discord.MessageEmbed()
+                        .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                        .setDescription('I could not find that player in the API. Check spelling and name history.')
+                        .setColor(color)
+                        .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                    message.channel.send(player404)
                 } else {
                     if (args[1]) {
-                        message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                        const error = new Discord.MessageEmbed()
+                        .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                        .setDescription('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                        .setColor(color)
+                        .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                        message.channel.send(error)
                     }
                 }       
             });
@@ -207,10 +267,20 @@ module.exports = {
 
             }).catch(e => { // error messages
                 if (e.message === HypixelAPIReborn.Errors.PLAYER_DOES_NOT_EXIST) {
-                    message.channel.send('I could not find that player in the API. Check spelling and name history.')
+                    const player404 = new Discord.MessageEmbed()
+                        .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                        .setDescription('I could not find that player in the API. Check spelling and name history.')
+                        .setColor(color)
+                        .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                    message.channel.send(player404)
                 } else {
                     if (args[1]) {
-                        message.channel.send('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                        const error = new Discord.MessageEmbed()
+                        .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                        .setDescription('An error has occurred. If the error persists, please make a support ticket in the server. `h!invite`')
+                        .setColor(color)
+                        .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                        message.channel.send(error)
                     }
                 }       
             });

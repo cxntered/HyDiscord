@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const { color, footer } = require('../Storages/embed.json')
 module.exports = {
     name: 'ban',
     guildOnly: true,
@@ -9,16 +10,36 @@ module.exports = {
             const member = message.guild.member(user);
             if(member){
                 member.ban({reason: 'Did a no no :('}).then(() =>{ // bans member
-                    message.channel.send(`Sucessfully banned ${user.tag}`) // ban message
+                    const ban = new Discord.MessageEmbed()
+                        .setAuthor('Ban', 'https://i.imgur.com/OuoECfX.jpeg')
+                        .addField('User', `<@${user.id}>`, true)
+                        .addField('By', `${message.author}`, true)
+                        .setColor(color)
+                        .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                    message.channel.send(ban) // ban message
                 }).catch(err =>{
-                    message.channel.send(`I was unable to ban ${user.tag}`) // error message
-                    console.log(error);
+                    const error = new Discord.MessageEmbed()
+                        .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                        .setDescription(`I was unable to ban <@${user.id}>`)
+                        .setColor(color)
+                        .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                    message.channel.send(error) // error message
                 });
-            } else{
-                message.channel.send("That user isn't in the server!") // if user isn't in server
+            } else {
+                const user404 = new Discord.MessageEmbed()
+                    .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                    .setDescription('That user isn\'t in the server!')
+                    .setColor(color)
+                    .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.channel.send(user404) // if user isn't in server
             } 
         } else {
-            message.channel.send("You need to @ who you want to ban!"); // if someone didn't ping user
+            const ping404 = new Discord.MessageEmbed()
+                .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                .setDescription('You need to @ who you want to ban!')
+                .setColor(color)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+            message.channel.send(ping404) // if someone didn't ping user
         }
     }
 }
