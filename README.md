@@ -14,8 +14,52 @@ HyDiscord is a bot that allows you to see Hypixel stats of many people and many 
 
 in this one Discord Bot!
 
+## Where can I invite the bot?
+You can invite the bot [here.](https://bit.ly/HyDiscord)
+
+Here is the [Top.gg](https://top.gg/bot/771667974343360552) if you want to vote for HyDiscord.
+
+## Commands
+
+Visit the [HyDiscord Website](https://hydiscord.github.io) for more information on the [commands](https://hydiscord.github.io/commands)
+
+<details>
+  <summary>Hypixel</summary>
+  
+  ### Hypixel
+  - h!player
+  - h!guild
+  - h!bedwars
+  - h!skywars
+  - h!duels
+  - h!uhc
+  - h!speeduhc
+  - h!watchdog
+  - h!socials
+  - h!namehistory
+  - h!uuid
+  - h!skin
+  - h!server
+</details>
+
+<details>
+  <summary>Utility</summary>
+  
+  ### Utility
+  - h!help
+  - h!members
+  - h!ping
+  - h!invite
+  - h!clear
+  - h!ban
+  - h!kick
+  - h!suggest
+  - h!coinflip
+  - h!rng
+</details>
+
 ## How was HyDiscord made?
-HyDiscord was made using [node.js](https://nodejs.org), [discord.js](https://discord.js.org) and [Hypixel-API-Reborn](https://www.npmjs.com/package/hypixel-api-reborn)
+HyDiscord was made using [node.js](https://nodejs.org), [discord.js](https://discord.js.org), [Hypixel-API-Reborn](https://www.npmjs.com/package/hypixel-api-reborn) and [node-fetch](https://www.npmjs.com/package/node-fetch).
 
 ## How do I run it myself?
 1. Create a Discord Developer Application [here.](https://discord.com/developers/applications)
@@ -31,15 +75,11 @@ HyDiscord was made using [node.js](https://nodejs.org), [discord.js](https://dis
 
 HyDiscord should now be running.
 
-## Where can I invite the bot?
-You can invite the bot [here.](https://bit.ly/HyDiscord)
-
 ## Support
-If you have trouble with the bot, you can either open an issue on GitHub or join the HyDiscord discord server [here.](https://bit.ly/HyDiscordServer)
+If you have trouble with the bot, you can either open an issue on GitHub or join the HyDiscord server [here.](https://bit.ly/HyDiscordServer)
 
 ## License
 Please refer to the project's [license.](https://github.com/HyDiscord/HyDiscord/blob/master/LICENSE)
-
 
 ## Note
 HyDiscord is in no way affiliated with Hypixel Inc. or Hypixel Studios.
