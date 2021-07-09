@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const { color, footer } = require('../Storages/embed.json')
 module.exports = {
     name: 'help',
-    aliases: [ "h", "commands", "commandlist" ],
+    aliases: [ "commands", "commandlist" ],
     execute(message, args){
         if(!args[0]){ // general help message
         const embed = new Discord.MessageEmbed()
@@ -23,7 +23,7 @@ module.exports = {
                 const help = new Discord.MessageEmbed()
                 .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
                 .addField('h!help', '`h!help` will you a list of commands.')
-                .addField('Aliases', '`h!h`, `h!commands`, `h!commandlist`')
+                .addField('Aliases', '`h!commands`, `h!commandlist`')
                 .addField('Usage', '`h!help <command>`')
                 .addField('Example', '`h!help`, `h!help bedwars`')
                 .setColor(color)
