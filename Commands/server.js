@@ -3,8 +3,17 @@ const fetch = require('node-fetch');
 const { color, footer } = require('../Storages/embed.json')
 module.exports = {
     name: 'server',
+    aliases: [ "ip" ],
     async execute(message, args){
         try {
+        if(!args[0]) { // if someone didn't type in ip
+        const ip404 = new Discord.MessageEmbed()
+                .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                .setDescription('You need to type in a server IP! (Example: `h!server mc.hypixel.net`)')
+                .setColor(color)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+        return message.channel.send(ip404)
+        }
         const MOTDFetch = await fetch(`https://api.mcsrvstat.us/2/${args[0]}`);
         const MOTDData = await MOTDFetch.json();
         const serverFetch = await fetch(`https://mc-api.net/v3/server/ping/${args[0]}`)

@@ -6,7 +6,12 @@ module.exports = {
     async execute(message, args){
         try {
         if(!args[0]) { // if someone didn't type in ign
-            return message.channel.send('You need to type in a player\'s IGN! (Example: `h!skin cxntered`)')
+            const ign404 = new Discord.MessageEmbed()
+                .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                .setDescription('You need to type in a player\'s IGN! (Example: `h!skin cxntered`)')
+                .setColor(color)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+            message.channel.send(ign404)
         }
         
         const playerUUIDFetch = await fetch(`https://api.mojang.com/users/profiles/minecraft/${args[0]}`); // fetch uuid 

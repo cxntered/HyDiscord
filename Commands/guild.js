@@ -6,10 +6,16 @@ const hypixelAPIReborn = new HypixelAPIReborn.Client(apikey);
 
 module.exports = {
     name: 'guild',
+    aliases: [ "g" ],
     async execute(message, args) {
         let guildName = args.join(' '); // for guilds with spaces in name
         if (!args[0]) { // if someone didn't type in guild name
-            message.channel.send('You need to type in a guild\'s name! (Not guild tag, but guild name.) (Example: `h!guild Rebel`)')
+            const guildArg404 = new Discord.MessageEmbed()
+                .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                .setDescription('You need to type in a guild\'s name! (Not guild tag, but guild name.) (Example: `h!guild Rebel`)')
+                .setColor(color)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+            message.channel.send(guildArg404)
         }
         hypixelAPIReborn.getGuild('name', guildName).then(async (guild) => {
             const createdAtDate = new Date(guild.createdAtTimestamp);

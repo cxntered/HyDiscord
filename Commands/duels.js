@@ -7,6 +7,7 @@ const commaNumber = require('comma-number');
 
 module.exports = {
     name: 'duels',
+    aliases: [ "d" ],
     execute(message, args) {
         if(!args[0]) { // if someone didn't type in gamemode
             const embed = new Discord.MessageEmbed()
@@ -23,7 +24,12 @@ module.exports = {
 
         if (args[0] == 'classic') {
             if (!args[1]) { // if someone didn't type in ign 
-                message.channel.send('You need to type in a player\'s IGN! (Example: `h!duels classic cxntered`)')
+                const ign404 = new Discord.MessageEmbed()
+                    .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                    .setDescription('You need to type in a player\'s IGN! (Example: `h!duels classic cxntered`)')
+                    .setColor(color)
+                    .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.channel.send(ign404)
             }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()
@@ -61,7 +67,12 @@ module.exports = {
 
         if (args[0] == 'uhc') {
             if (!args[1]) { // if someone didn't type in ign
-                message.channel.send('You need to type in a player\'s IGN! (Example: `h!duels uhc cxntered`)')
+                const ign404 = new Discord.MessageEmbed()
+                    .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                    .setDescription('You need to type in a player\'s IGN! (Example: `h!duels uhc cxntered`)')
+                    .setColor(color)
+                    .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.channel.send(ign404)
             }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()
@@ -99,7 +110,12 @@ module.exports = {
 
         if (args[0] == 'skywars' || args[0] == 'sw') {
             if (!args[1]) { // if someone didn't type in ign
-                message.channel.send('You need to type in a player\'s IGN! (Example: `h!duels skywars cxntered`)')
+                const ign404 = new Discord.MessageEmbed()
+                    .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                    .setDescription('You need to type in a player\'s IGN! (Example: `h!duels skywars cxntered`)')
+                    .setColor(color)
+                    .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.channel.send(ign404)
             }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()
@@ -137,7 +153,12 @@ module.exports = {
 
         if (args[0] == 'bridge') {
             if (!args[1]) { // if someone didn't type in ign
-                message.channel.send('You need to type in a player\'s IGN! (Example: `h!duels bridge cxntered`)')
+                const ign404 = new Discord.MessageEmbed()
+                    .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                    .setDescription('You need to type in a player\'s IGN! (Example: `h!duels bridge cxntered`)')
+                    .setColor(color)
+                    .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.channel.send(ign404)
             }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()
@@ -175,7 +196,12 @@ module.exports = {
 
         if (args[0] == 'sumo') {
             if (!args[1]) { // if someone didn't type in ign
-                message.channel.send('You need to type in a player\'s IGN! (Example: `h!duels sumo cxntered`)')
+                const ign404 = new Discord.MessageEmbed()
+                    .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                    .setDescription('You need to type in a player\'s IGN! (Example: `h!duels sumo cxntered`)')
+                    .setColor(color)
+                    .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.channel.send(ign404)
             }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()
@@ -213,7 +239,12 @@ module.exports = {
 
         if (args[0] == 'op') {
             if (!args[1]) { // if someone didn't type in ign
-                message.channel.send('You need to type in a player\'s IGN! (Example: `h!duels op cxntered`)')
+                const ign404 = new Discord.MessageEmbed()
+                    .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                    .setDescription('You need to type in a player\'s IGN! (Example: `h!duels op cxntered`)')
+                    .setColor(color)
+                    .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.channel.send(ign404)
             }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()
@@ -251,7 +282,12 @@ module.exports = {
 
         if (args[0] == 'combo') {
             if (!args[1]) { // if someone didn't type in ign
-                message.channel.send('You need to type in a player\'s IGN! (Example: `h!duels combo cxntered`)')
+                const ign404 = new Discord.MessageEmbed()
+                    .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                    .setDescription('You need to type in a player\'s IGN! (Example: `h!duels combo cxntered`)')
+                    .setColor(color)
+                    .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.channel.send(ign404)
             }
             hypixelAPIReborn.getPlayer(args[1]).then((player) => {
                 const embed = new Discord.MessageEmbed()

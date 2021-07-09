@@ -7,10 +7,15 @@ const commaNumber = require('comma-number');
 
 module.exports = {
     name: 'skywars',
-    aliases: ['sw'],
+    aliases: [ "sw", "s" ],
     execute(message, args) {
             if (!args[0]) { // if someone didn't type in ign
-                message.channel.send('You need to type in a player\'s IGN! (Example: `h!skywars cxntered`)')
+                const ign404 = new Discord.MessageEmbed()
+                    .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+                    .setDescription('You need to type in a player\'s IGN! (Example: `h!skywars cxntered`)')
+                    .setColor(color)
+                    .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.channel.send(ign404)
             }
             hypixelAPIReborn.getPlayer(args[0]).then((player) => {
                 const embed = new Discord.MessageEmbed()
