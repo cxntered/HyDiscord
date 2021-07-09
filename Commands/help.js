@@ -21,7 +21,7 @@ module.exports = {
             case 'commandlist':
                 const help = new Discord.MessageEmbed()
                 .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
-                .addField('h!help', '`h!help` will you a list of commands.')
+                .addField('h!help', '`h!help` will show you a list of commands.')
                 .addField('Aliases', '`h!commands`, `h!commandlist`')
                 .addField('Usage', '`h!help <command>`')
                 .addField('Example', '`h!help`, `h!help bedwars`')
