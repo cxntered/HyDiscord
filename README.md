@@ -11,6 +11,7 @@ HyDiscord is a bot that allows you to see Hypixel stats of many people and many 
 * UUID of a player
 * Watchdog stats
 * Guild stats
+* and Server information
 
 in this one Discord Bot!
 
@@ -49,7 +50,8 @@ Visit the [HyDiscord Website](https://hydiscord.github.io) for more information 
   - h!help
   - h!members
   - h!ping
-  - h!invite
+  - h!links
+  - h!vote
   - h!clear
   - h!ban
   - h!kick
