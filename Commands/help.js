@@ -17,7 +17,6 @@ module.exports = {
         }
         switch(args[0]) { // specific command help
             case 'help':
-            case 'h':
             case 'commands':
             case 'commandlist':
                 const help = new Discord.MessageEmbed()
