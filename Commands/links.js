@@ -11,6 +11,7 @@ module.exports = {
             .addField('Website', 'https://hydiscord.github.io')
             .addField('Discord Server', 'https://hydiscord.github.io/discord')
             .addField('Vote', 'https://hydiscord.github.io/vote')
+            .addField('Forums Post', 'https://hydiscord.github.io/forums')
             .setColor(color)
             .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
          message.channel.send(embed)

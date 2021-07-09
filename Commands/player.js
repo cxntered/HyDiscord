@@ -60,7 +60,6 @@ module.exports = {
 
             const playerInfoEmbed = new Discord.MessageEmbed()
                 .setAuthor('Player Stats', 'https://i.imgur.com/OuoECfX.jpeg')              
-                .setDescription(`[${player.rank}] ${player.nickname}`)
                 .setColor(color)
                 .setThumbnail(`https://crafatar.com/avatars/${playerUUIDData.id}?overlay&size=256`)
                 .addField('Rank:', playerRank, true)
@@ -69,6 +68,11 @@ module.exports = {
 
             if (player.guild != null) {
                 playerInfoEmbed.addField('Guild:', player.guild.name)
+            }
+
+            if (player.guild != null && player.guild.tag != null) {
+                playerInfoEmbed.setDescription(`[${player.rank}] ${player.nickname} [${player.guild.tag}]`)
+                playerInfoEmbed.addField('Guild:', `${player.guild.name} [${player.guild.tag}]`)
             }
             
                 playerInfoEmbed.addField('Main MC Version:', playerMinecraftVersion, true)
