@@ -15,10 +15,16 @@ HyDiscord is a bot that allows you to see Hypixel stats of many people and many 
 
 in this one Discord Bot!
 
-## Where can I invite the bot?
-You can invite the bot [here.](https://bit.ly/HyDiscord)
+## Links
+[Invite HyDiscord!](https://hydiscord.github.io/invite)
 
-Here is the [Top.gg](https://top.gg/bot/771667974343360552) if you want to vote for HyDiscord.
+[Join the HyDiscord Discord server!](https://hydiscord.github.io/discord)
+
+[Vote for HyDiscord on Top.gg!](https://hydiscord.github.io/vote)
+
+[Visit the HyDiscord Website!](https://hydiscord.github.io)
+
+[Check out the HyDiscord forums post!](https://hydiscord.github.io/invite)
 
 ## Commands
 
