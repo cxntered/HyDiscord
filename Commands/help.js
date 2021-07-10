@@ -232,7 +232,7 @@ module.exports = {
             break;
             case 'crazywalls':
             case 'cw':
-                const links = new Discord.MessageEmbed()
+                const crazywalls = new Discord.MessageEmbed()
                 .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
                 .addField('h!crazywalls', '`h!crazywalls` will show you the Crazy Walls stats of a player')
                 .addField('Aliases', '`h!cw`')
@@ -240,7 +240,7 @@ module.exports = {
                 .addField('Example', '`h!crazywalls cxntered`')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
-                message.channel.send(links)
+                message.channel.send(crazywalls)
             break;
             case 'megawalls':
             case 'mw':
@@ -306,18 +306,6 @@ module.exports = {
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
                 message.channel.send(vampirez)
-            break;
-            case 'links':
-            case 'invite':
-                const links = new Discord.MessageEmbed()
-                .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
-                .addField('h!links', '`h!links` will send you links related to HyDiscord')
-                .addField('Aliases', '`h!invite`')
-                .addField('Usage', '`h!links`')
-                .addField('Example', '`h!links`')
-                .setColor(color)
-                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
-                message.channel.send(links)
             break;
             case 'watchdog':
             case 'wdr':
