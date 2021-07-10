@@ -4,6 +4,15 @@ HyDiscord is a bot that allows you to see Hypixel stats of many people and many 
 * SkyWars stats of a player
 * UHC and SpeedUHC stats of a player
 * Duels stats of a player
+* Blitz Survival Games stats of a player
+* Build Battle stats of a player
+* Cops and Crims stats of a player
+* Crazy Walls stats of a player
+* Mega Walls stats of a player
+* Murder Mystery stats of a player
+* Smash Heroes stats of a player
+* TNT Games stats of a player
+* VampireZ stats of a player
 * Name history of a player
 * Social medias of a player
 * Player stats
