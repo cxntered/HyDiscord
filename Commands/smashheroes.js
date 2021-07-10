@@ -6,29 +6,35 @@ const hypixelAPIReborn = new HypixelAPIReborn.Client(apikey);
 const commaNumber = require('comma-number')
 
 module.exports = {
-    name: 'uhc',
+    name: 'smashheroes',
+    aliases: [ "sh", "smash" ],
     execute(message, args) {
         if (!args[0]) { // if someone didn't type in ign
             const ign404 = new Discord.MessageEmbed()
                 .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
-                .setDescription('You need to type in a player\'s IGN! (Example: `h!uhc cxntered`)')
+                .setDescription('You need to type in a player\'s IGN! (Example: `h!smashheroes cxntered`)')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
             message.channel.send(ign404)
         }
         hypixelAPIReborn.getPlayer(args[0]).then((player) => {
             const embed = new Discord.MessageEmbed()
-                .setAuthor('UHC Stats', 'https://i.imgur.com/OuoECfX.jpeg')
+                .setAuthor('Smash Heroes Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                 .setDescription(`[${player.rank}] ${player.nickname}`)
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
-                .setImage('https://hypixel.net/styles/hypixel-v2/images/game-icons/UHC-64.png')
-                .addField('Kills:', `\`${commaNumber(player.stats.uhc.kills)}\``, true)
-                .addField('Level:', `\`${player.stats.uhc.starLevel}\``, true)
-                .addField('Wins:', `\`${commaNumber(player.stats.uhc.wins)}\``, true)
-                .addField('Heads Eaten:', `\`${commaNumber(player.stats.uhc.headsEaten)}\``, true)
-                .addField('Deaths', `\`${commaNumber(player.stats.uhc.deaths)}\``, true)
-                .addField('Coins:', `\`${commaNumber(player.stats.uhc.coins)}\``, true)
+                .setImage('https://hypixel.net/styles/hypixel-v2/images/game-icons/SmashHeroes-64.png')
+                .addField('Level:', `\`${commaNumber(player.stats.smashheroes.level)}\``, true)
+                .addField('Coins:', `\`${commaNumber(player.stats.smashheroes.coins)}\``, true)
+                .addField('Wins:', `\`${commaNumber(player.stats.smashheroes.wins)}\``, true)
+                .addField('Losses:', `\`${commaNumber(player.stats.smashheroes.losses)}\``, true)
+                .addField('WL Ratio:', `\`${commaNumber(player.stats.smashheroes.WLRatio)}\``, true)
+                .addField('Kills:', `\`${commaNumber(player.stats.smashheroes.kills)}\``, true)
+                .addField('Deaths:', `\`${commaNumber(player.stats.smashheroes.deaths)}\``, true)
+                .addField('KD Ratio:', `\`${commaNumber(player.stats.smashheroes.KDRatio)}\``, true)
+                .addField('Winstreak:', `\`${commaNumber(player.stats.smashheroes.winstreak)}\``, true)
+                .addField('Total Games:', `\`${commaNumber(player.stats.smashheroes.games)}\``, true)
+                .addField('Total Quits:', `\`${commaNumber(player.stats.smashheroes.quits)}\``, true)
 
             message.channel.send(embed);
 

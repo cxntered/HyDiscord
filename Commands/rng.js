@@ -9,7 +9,7 @@ module.exports = {
         if(isNaN(args[1]))return message.channel.send("That is not a number!") // if someone types something other than a number
         const embed = new Discord.MessageEmbed()
             .setAuthor('RNG', 'https://i.imgur.com/OuoECfX.jpeg')
-            .setDescription(`You got ${response}!`)
+            .setDescription(`You got \`${response}\`!`)
             .setColor(color)
             .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
         message.channel.send(embed)

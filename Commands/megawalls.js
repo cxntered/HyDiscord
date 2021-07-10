@@ -6,29 +6,38 @@ const hypixelAPIReborn = new HypixelAPIReborn.Client(apikey);
 const commaNumber = require('comma-number')
 
 module.exports = {
-    name: 'uhc',
+    name: 'megawalls',
+    aliases: [ "mw", "mega" ],
     execute(message, args) {
         if (!args[0]) { // if someone didn't type in ign
             const ign404 = new Discord.MessageEmbed()
                 .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
-                .setDescription('You need to type in a player\'s IGN! (Example: `h!uhc cxntered`)')
+                .setDescription('You need to type in a player\'s IGN! (Example: `h!megawalls cxntered`)')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
             message.channel.send(ign404)
         }
         hypixelAPIReborn.getPlayer(args[0]).then((player) => {
             const embed = new Discord.MessageEmbed()
-                .setAuthor('UHC Stats', 'https://i.imgur.com/OuoECfX.jpeg')
+                .setAuthor('Mega Walls Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                 .setDescription(`[${player.rank}] ${player.nickname}`)
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
-                .setImage('https://hypixel.net/styles/hypixel-v2/images/game-icons/UHC-64.png')
-                .addField('Kills:', `\`${commaNumber(player.stats.uhc.kills)}\``, true)
-                .addField('Level:', `\`${player.stats.uhc.starLevel}\``, true)
-                .addField('Wins:', `\`${commaNumber(player.stats.uhc.wins)}\``, true)
-                .addField('Heads Eaten:', `\`${commaNumber(player.stats.uhc.headsEaten)}\``, true)
-                .addField('Deaths', `\`${commaNumber(player.stats.uhc.deaths)}\``, true)
-                .addField('Coins:', `\`${commaNumber(player.stats.uhc.coins)}\``, true)
+                .setImage('https://hypixel.net/styles/hypixel-v2/images/game-icons/MegaWalls-64.png')
+                .addField('Class:', `\`${commaNumber(player.stats.megawalls.selectedClass)}\``, true)
+                .addField('Coins:', `\`${commaNumber(player.stats.megawalls.coins)}\``, true)
+                .addField('Wins:', `\`${commaNumber(player.stats.megawalls.wins)}\``, true)
+                .addField('Total Games:', `\`${commaNumber(player.stats.megawalls.playedGames)}\``, true)
+                .addField('Kills:', `\`${commaNumber(player.stats.megawalls.kills)}\``, true)
+                .addField('Final Kills:', `\`${commaNumber(player.stats.megawalls.finalKills)}\``, true)
+                .addField('Losses:', `\`${commaNumber(player.stats.megawalls.losses)}\``, true)
+                .addField('Deathes:', `\`${commaNumber(player.stats.megawalls.deaths)}\``, true)
+                .addField('Final Deaths:', `\`${commaNumber(player.stats.megawalls.finalDeaths)}\``, true)
+                .addField('Final Assists:', `\`${commaNumber(player.stats.megawalls.finalAssists)}\``, true)
+                .addField('Wither Kills:', `\`${commaNumber(player.stats.megawalls.defenderKills)}\``, true)
+                .addField('Wither Damage:', `\`${commaNumber(player.stats.megawalls.witherDamage)}\``, true)
+                .addField('KD Ratio:', `\`${commaNumber(player.stats.megawalls.KDRatio)}\``, true)
+                .addField('WL Ratio:', `\`${commaNumber(player.stats.megawalls.WLRatio)}\``, true)
 
             message.channel.send(embed);
 

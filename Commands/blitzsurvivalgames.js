@@ -6,29 +6,28 @@ const hypixelAPIReborn = new HypixelAPIReborn.Client(apikey);
 const commaNumber = require('comma-number')
 
 module.exports = {
-    name: 'uhc',
+    name: 'blitzsurvivalgames',
+    aliases: [ "bsg", "survivalgames", "sg", "blitz" ],
     execute(message, args) {
         if (!args[0]) { // if someone didn't type in ign
             const ign404 = new Discord.MessageEmbed()
                 .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
-                .setDescription('You need to type in a player\'s IGN! (Example: `h!uhc cxntered`)')
+                .setDescription('You need to type in a player\'s IGN! (Example: `h!blitzsurvivalgames cxntered`)')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
             message.channel.send(ign404)
         }
         hypixelAPIReborn.getPlayer(args[0]).then((player) => {
             const embed = new Discord.MessageEmbed()
-                .setAuthor('UHC Stats', 'https://i.imgur.com/OuoECfX.jpeg')
+                .setAuthor('Blitz Survival Games Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                 .setDescription(`[${player.rank}] ${player.nickname}`)
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
-                .setImage('https://hypixel.net/styles/hypixel-v2/images/game-icons/UHC-64.png')
-                .addField('Kills:', `\`${commaNumber(player.stats.uhc.kills)}\``, true)
-                .addField('Level:', `\`${player.stats.uhc.starLevel}\``, true)
-                .addField('Wins:', `\`${commaNumber(player.stats.uhc.wins)}\``, true)
-                .addField('Heads Eaten:', `\`${commaNumber(player.stats.uhc.headsEaten)}\``, true)
-                .addField('Deaths', `\`${commaNumber(player.stats.uhc.deaths)}\``, true)
-                .addField('Coins:', `\`${commaNumber(player.stats.uhc.coins)}\``, true)
+                .addField('Coins:', `\`${commaNumber(player.stats.blitzsg.coins)}\``, true)
+                .addField('Solo Wins:', `\`${commaNumber(player.stats.blitzsg.winsSolo)}\``, true)
+                .addField('Team Wins:', `\`${commaNumber(player.stats.blitzsg.winsTeam)}\``, true)
+                .addField('Deaths:', `\`${commaNumber(player.stats.blitzsg.deaths)}\``, true)
+                .addField('KD Ratio:', `\`${commaNumber(player.stats.blitzsg.KDRatio)}\``, true)
 
             message.channel.send(embed);
 

@@ -6,7 +6,7 @@ module.exports = {
     execute(message, args){
         const embed = new Discord.MessageEmbed()
             .setAuthor('Members', 'https://i.imgur.com/OuoECfX.jpeg')
-            .setDescription(`Total members: ${message.guild.memberCount}`)
+            .setDescription(`Total members: \`${message.guild.memberCount}\``)
             .setColor(color)
             .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
         message.channel.send(embed)

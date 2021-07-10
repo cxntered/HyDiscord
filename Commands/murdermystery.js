@@ -6,29 +6,31 @@ const hypixelAPIReborn = new HypixelAPIReborn.Client(apikey);
 const commaNumber = require('comma-number')
 
 module.exports = {
-    name: 'uhc',
+    name: 'murdermystery',
+    aliases: [ "mm", "murder", "mystery" ],
     execute(message, args) {
         if (!args[0]) { // if someone didn't type in ign
             const ign404 = new Discord.MessageEmbed()
                 .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
-                .setDescription('You need to type in a player\'s IGN! (Example: `h!uhc cxntered`)')
+                .setDescription('You need to type in a player\'s IGN! (Example: `h!murdermystery cxntered`)')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
             message.channel.send(ign404)
         }
         hypixelAPIReborn.getPlayer(args[0]).then((player) => {
             const embed = new Discord.MessageEmbed()
-                .setAuthor('UHC Stats', 'https://i.imgur.com/OuoECfX.jpeg')
+                .setAuthor('Murder Mystery Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                 .setDescription(`[${player.rank}] ${player.nickname}`)
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
-                .setImage('https://hypixel.net/styles/hypixel-v2/images/game-icons/UHC-64.png')
-                .addField('Kills:', `\`${commaNumber(player.stats.uhc.kills)}\``, true)
-                .addField('Level:', `\`${player.stats.uhc.starLevel}\``, true)
-                .addField('Wins:', `\`${commaNumber(player.stats.uhc.wins)}\``, true)
-                .addField('Heads Eaten:', `\`${commaNumber(player.stats.uhc.headsEaten)}\``, true)
-                .addField('Deaths', `\`${commaNumber(player.stats.uhc.deaths)}\``, true)
-                .addField('Coins:', `\`${commaNumber(player.stats.uhc.coins)}\``, true)
+                .setImage('https://hypixel.net/styles/hypixel-v2/images/game-icons/MurderMystery-64.png')
+                .addField('Coins:', `\`${commaNumber(player.stats.murdermystery.coins)}\``, true)
+                .addField('Wins:', `\`${commaNumber(player.stats.murdermystery.wins)}\``, true)
+                .addField('Total Games:', `\`${commaNumber(player.stats.murdermystery.playedGames)}\``, true)
+                .addField('Kills:', `\`${commaNumber(player.stats.murdermystery.kills)}\``, true)
+                .addField('Deaths:', `\`${commaNumber(player.stats.murdermystery.deaths)}\``, true)
+                .addField('Wins As Murderer:', `\`${commaNumber(player.stats.murdermystery.winsAsMurderer)}\``, true)
+                .addField('Wins As Detective:', `\`${commaNumber(player.stats.murdermystery.winsAsDetective)}\``, true)
 
             message.channel.send(embed);
 

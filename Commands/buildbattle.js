@@ -6,29 +6,33 @@ const hypixelAPIReborn = new HypixelAPIReborn.Client(apikey);
 const commaNumber = require('comma-number')
 
 module.exports = {
-    name: 'uhc',
+    name: 'buildbattle',
+    aliases: [ "bb", "build" ],
     execute(message, args) {
         if (!args[0]) { // if someone didn't type in ign
             const ign404 = new Discord.MessageEmbed()
                 .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
-                .setDescription('You need to type in a player\'s IGN! (Example: `h!uhc cxntered`)')
+                .setDescription('You need to type in a player\'s IGN! (Example: `h!buildbattle cxntered`)')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
             message.channel.send(ign404)
         }
         hypixelAPIReborn.getPlayer(args[0]).then((player) => {
             const embed = new Discord.MessageEmbed()
-                .setAuthor('UHC Stats', 'https://i.imgur.com/OuoECfX.jpeg')
+                .setAuthor('Build Battle Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                 .setDescription(`[${player.rank}] ${player.nickname}`)
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
-                .setImage('https://hypixel.net/styles/hypixel-v2/images/game-icons/UHC-64.png')
-                .addField('Kills:', `\`${commaNumber(player.stats.uhc.kills)}\``, true)
-                .addField('Level:', `\`${player.stats.uhc.starLevel}\``, true)
-                .addField('Wins:', `\`${commaNumber(player.stats.uhc.wins)}\``, true)
-                .addField('Heads Eaten:', `\`${commaNumber(player.stats.uhc.headsEaten)}\``, true)
-                .addField('Deaths', `\`${commaNumber(player.stats.uhc.deaths)}\``, true)
-                .addField('Coins:', `\`${commaNumber(player.stats.uhc.coins)}\``, true)
+                .setImage('https://hypixel.net/styles/hypixel-v2/images/game-icons/BuildBattle-64.png')
+                .addField('Coins:', `\`${commaNumber(player.stats.buildbattle.coins)}\``, true)
+                .addField('Total Wins:', `\`${commaNumber(player.stats.buildbattle.winsTotal)}\``, true)
+                .addField('Total Games:', `\`${commaNumber(player.stats.buildbattle.playedGames)}\``, true)
+                .addField('Total Votes:', `\`${commaNumber(player.stats.buildbattle.totalVotes)}\``, true)
+                .addField('Score:', `\`${commaNumber(player.stats.buildbattle.score)}\``, true)
+                .addField('Solo Wins:', `\`${commaNumber(player.stats.buildbattle.wins.solo)}\``, true)
+                .addField('Team Wins:', `\`${commaNumber(player.stats.buildbattle.wins.team)}\``, true)
+                .addField('Pro Wins:', `\`${commaNumber(player.stats.buildbattle.wins.pro)}\``, true)
+                .addField('Guess That Build Wins:', `\`${commaNumber(player.stats.buildbattle.wins.gtb)}\``, true)
 
             message.channel.send(embed);
 

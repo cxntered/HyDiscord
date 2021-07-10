@@ -14,9 +14,9 @@ module.exports = {
                 .setAuthor('Watchdog Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
-                .addField('Total Watchdog bans:', commaNumber(stats.byWatchdogTotal), true)
-                .addField('Bans in the last minute:', commaNumber(stats.byWatchDogLastMinute), true)
-                .addField('Total staff bans', commaNumber(stats.byStaffTotal), true)
+                .addField('Total Watchdog bans:', `\`${commaNumber(stats.byWatchdogTotal)}\``, true)
+                .addField('Bans in the last minute:', `\`${commaNumber(stats.byWatchDogLastMinute)}\``, true)
+                .addField('Total staff bans', `\`${commaNumber(stats.byStaffTotal)}\``, true)
             message.channel.send(watchdogStatsEmbed);
         });
     }

@@ -7,8 +7,8 @@ module.exports = {
         if(!args[0]){ // general help message
         const embed = new Discord.MessageEmbed()
         .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
+        .addField('Hypixel 🎮', '`h!player` \n`h!guild` \n`h!bedwars` \n`h!skywars` \n`h!duels` \n`h!uhc` \n`h!speeduhc` \n`h!speeduhc` \n`h!blitzsurvivalgames` \n`h!buildbattle` \n`h!copsandcrims` \n`h!crazywalls` \n`h!megawalls` \n`h!murdermystery` \n`h!smashheroes` \n`h!tntgames` \n`h!vampirez` \n`h!socials`', true)
         .addField('Utility 🛠', '`h!help` \n`h!members` \n`h!ping` \n`h!links` \n`h!vote` \n`h!clear` \n`h!ban` \n`h!kick` \n`h!suggest` \n`h!coinflip` \n`h!rng`', true)
-        .addField('Hypixel 🎮', '`h!player` \n`h!guild` \n`h!bedwars` \n`h!skywars` \n`h!duels` \n`h!uhc` \n`h!speeduhc` \n`h!watchdog` \n`h!socials`', true)
         .addField('Minecraft ⛏', '`h!namehistory` \n`h!uuid` \n`h!skin` \n`h!server`', true)
         .setDescription('Do `h!help [command]` to see what that command does.')
         .setColor(color)
@@ -23,7 +23,7 @@ module.exports = {
                 .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
                 .addField('h!help', '`h!help` will show you a list of commands.')
                 .addField('Aliases', '`h!commands`, `h!commandlist`')
-                .addField('Usage', '`h!help <command>`')
+                .addField('Usage', '`h!help <Command>`')
                 .addField('Example', '`h!help`, `h!help bedwars`')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
@@ -75,7 +75,7 @@ module.exports = {
                 const ban = new Discord.MessageEmbed()
                 .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
                 .addField('h!ban', '`h!ban` will ban a user you specify')
-                .addField('Usage', '`h!ban [@user]`')
+                .addField('Usage', '`h!ban [@User]`')
                 .addField('Example', '`h!ban @cxntered`')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
@@ -85,7 +85,7 @@ module.exports = {
                 const kick = new Discord.MessageEmbed()
                 .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
                 .addField('h!kick', '`h!kick` will kick a user you specify')
-                .addField('Usage', '`h!kick [@user]`')
+                .addField('Usage', '`h!kick [@User]`')
                 .addField('Example', '`h!kick @cxntered`')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
@@ -109,7 +109,7 @@ module.exports = {
             case 'h':
                 const player = new Discord.MessageEmbed()
                 .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
-                .addField('h!player', '`h!player` will show you the Hypixel stats of a user')
+                .addField('h!player', '`h!player` will show you the Hypixel stats of a player')
                 .addField('Aliases', '`h!p`, `h!hypixel`, `h!h`')
                 .addField('Usage', '`h!player [IGN]`')
                 .addField('Example', '`h!player cxntered`')
@@ -122,7 +122,7 @@ module.exports = {
             case 'b':
                 const bedwars = new Discord.MessageEmbed()
                 .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
-                .addField('h!bedwars', '`h!bedwars` will show you the BedWars stats of a user')
+                .addField('h!bedwars', '`h!bedwars` will show you the BedWars stats of a player')
                 .addField('Aliases', '`h!bw`, `h!b`')
                 .addField('Usage', '`h!bedwars [IGN]`')
                 .addField('Example', '`h!bedwars cxntered`')
@@ -134,9 +134,9 @@ module.exports = {
             case 'd':
                 const duels = new Discord.MessageEmbed()
                 .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
-                .addField('h!duels', '`h!duels` will show you the Duels stats of a user')
+                .addField('h!duels', '`h!duels` will show you the Duels stats of a player')
                 .addField('Aliases', '`h!d`')
-                .addField('Usage', '`h!duels [mode] [IGN]`')
+                .addField('Usage', '`h!duels [Mode] [IGN]`')
                 .addField('Example', '`h!duels classic cxntered`')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
@@ -145,7 +145,7 @@ module.exports = {
             case 'socials':
                 const socials = new Discord.MessageEmbed()
                 .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
-                .addField('h!socials', '`h!socials` will show you the social medias of a user')
+                .addField('h!socials', '`h!socials` will show you the social medias of a player')
                 .addField('Usage', '`h!socials [IGN]`')
                 .addField('Example', '`h!socials cxntered`')
                 .setColor(color)
@@ -157,7 +157,7 @@ module.exports = {
             case 's':
                 const skywars = new Discord.MessageEmbed()
                 .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
-                .addField('h!skywars', '`h!skywars` will show you the SkyWars stats of a user')
+                .addField('h!skywars', '`h!skywars` will show you the SkyWars stats of a player')
                 .addField('Aliases', '`h!sw`, `h!s`')
                 .addField('Usage', '`h!skywars [IGN]`')
                 .addField('Example', '`h!skywars cxntered`')
@@ -168,7 +168,7 @@ module.exports = {
             case 'uhc':
                 const uhc = new Discord.MessageEmbed()
                 .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
-                .addField('h!uhc', '`h!uhc` will show you the UHC stats of a user')
+                .addField('h!uhc', '`h!uhc` will show you the UHC stats of a player')
                 .addField('Usage', '`h!uhc [IGN]`')
                 .addField('Example', '`h!uhc cxntered`')
                 .setColor(color)
@@ -179,13 +179,145 @@ module.exports = {
             case 'suhc':
                 const speeduhc = new Discord.MessageEmbed()
                 .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
-                .addField('h!speeduhc', '`h!speeduhc` will show you the SpeedUHC stats of a user')
+                .addField('h!speeduhc', '`h!speeduhc` will show you the SpeedUHC stats of a player')
                 .addField('Aliases', '`h!suhc`')
                 .addField('Usage', '`h!speeduhc [IGN]`')
                 .addField('Example', '`h!speeduhc cxntered`')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
                 message.channel.send(speeduhc)
+            break;
+            case 'blitzsurvivalgames':
+            case 'blitz':
+            case 'survivalgames':
+            case 'sg':
+                const blitzsurvivalgames = new Discord.MessageEmbed()
+                .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
+                .addField('h!blitzsurvivalgames', '`h!blitzsurvivalgames` will show you the Blitz Survival Games stats of a player')
+                .addField('Aliases', '`h!blitz`, `h!survivalgames`, `h!sg`')
+                .addField('Usage', '`h!blitzsurvivalgames [IGN]`')
+                .addField('Example', '`h!blitzsurvivalgames cxntered`')
+                .setColor(color)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.channel.send(blitzsurvivalgames)
+            break;
+            case 'buildbattle':
+            case 'bb':
+            case 'build':
+                const buildbattle = new Discord.MessageEmbed()
+                .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
+                .addField('h!buildbattle', '`h!buildbattle` will show you the Build Battle stats of a player')
+                .addField('Aliases', '`h!bb`, `h!build`')
+                .addField('Usage', '`h!buildbattle [IGN]`')
+                .addField('Example', '`h!buildbattle cxntered`')
+                .setColor(color)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.channel.send(buildbattle)
+            break;
+            case 'copsandcrims':
+            case 'cac':
+            case 'cvc':
+            case 'c&c':
+            case 'cops':
+            case 'crims':
+                const copsandcrims = new Discord.MessageEmbed()
+                .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
+                .addField('h!copsandcrims', '`h!copsandcrims` will show you the Cops and Crims stats of a player')
+                .addField('Aliases', '`h!c&c`, `h!cac`, `h!cvc`, `h!cops`, `h!crims`')
+                .addField('Usage', '`h!copsandcrims [IGN]`')
+                .addField('Example', '`h!copsandcrims cxntered`')
+                .setColor(color)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.channel.send(copsandcrims)
+            break;
+            case 'crazywalls':
+            case 'cw':
+                const links = new Discord.MessageEmbed()
+                .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
+                .addField('h!crazywalls', '`h!crazywalls` will show you the Crazy Walls stats of a player')
+                .addField('Aliases', '`h!cw`')
+                .addField('Usage', '`h!crazywalls [IGN]`')
+                .addField('Example', '`h!crazywalls cxntered`')
+                .setColor(color)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.channel.send(links)
+            break;
+            case 'megawalls':
+            case 'mw':
+                const megawalls = new Discord.MessageEmbed()
+                .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
+                .addField('h!megawalls', '`h!megawalls` will show you the Mega Walls stats of a player')
+                .addField('Aliases', '`h!mw`')
+                .addField('Usage', '`h!megawalls [IGN]`')
+                .addField('Example', '`h!megawalls cxntered`')
+                .setColor(color)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.channel.send(megawalls)
+            break;
+            case 'murdermystery':
+            case 'mm':
+            case 'murder':
+            case 'mystery':
+                const murdermystery = new Discord.MessageEmbed()
+                .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
+                .addField('h!murdermystery', '`h!murdermystery` will show you the Murder Mystery stats of a player')
+                .addField('Aliases', '`h!mm`, `h!murder`, `h!mystery`')
+                .addField('Usage', '`h!murdermystery [IGN]`')
+                .addField('Example', '`h!murdermystery cxntered`')
+                .setColor(color)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.channel.send(murdermystery)
+            break;
+            case 'smashheroes':
+            case 'sh':
+            case 'smash':
+                const smashheroes = new Discord.MessageEmbed()
+                .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
+                .addField('h!smashheroes', '`h!smashheroes` will show you the Smash Heroes stats of a player')
+                .addField('Aliases', '`h!sh`, `h!smash`')
+                .addField('Usage', '`h!smashheroes [IGN]`')
+                .addField('Example', '`h!smashheroes cxntered`')
+                .setColor(color)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.channel.send(smashheroes)
+            break;
+            case 'tntgames':
+            case 'tnt':
+                const tntgames = new Discord.MessageEmbed()
+                .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
+                .addField('h!tntgames', '`h!tntgames` will show you TNT Games stats of a player')
+                .addField('Aliases', '`h!tnt`')
+                .addField('Usage', '`h!tntgames [IGN]`')
+                .addField('Example', '`h!tntgames cxntered`')
+                .setColor(color)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.channel.send(tntgames)
+            break;
+            case 'vampirez':
+            case 'vampire':
+            case 'vampires':
+            case 'vampz':
+                const vampirez = new Discord.MessageEmbed()
+                .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
+                .addField('h!vampirez', '`h!vampirez` will show you the VampireZ stats of a player')
+                .addField('Aliases', '`h!vampire`, `h!vampires`. `h!vampz`')
+                .addField('Usage', '`h!vampirez [IGN]`')
+                .addField('Example', '`h!vampirez cxntered`')
+                .setColor(color)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.channel.send(vampirez)
+            break;
+            case 'links':
+            case 'invite':
+                const links = new Discord.MessageEmbed()
+                .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
+                .addField('h!links', '`h!links` will send you links related to HyDiscord')
+                .addField('Aliases', '`h!invite`')
+                .addField('Usage', '`h!links`')
+                .addField('Example', '`h!links`')
+                .setColor(color)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.channel.send(links)
             break;
             case 'watchdog':
             case 'wdr':
@@ -204,7 +336,7 @@ module.exports = {
             case 'names':    
                 const namehistory = new Discord.MessageEmbed()
                 .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
-                .addField('h!namehistory', '`h!namehistory` will show you the name history of a user')
+                .addField('h!namehistory', '`h!namehistory` will show you the name history of a player')
                 .addField('Aliases', '`h!nh`, `h!names`')
                 .addField('Usage', '`h!namehistory [IGN]`')
                 .addField('Example', '`h!namehistory cxntered`')
@@ -218,7 +350,7 @@ module.exports = {
                 .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
                 .addField('h!guild', '`h!guild` will show you the stats of a guild')
                 .addField('Aliases', '`h!g`')
-                .addField('Usage', '`h!guild [guild]`')
+                .addField('Usage', '`h!guild [Guild]`')
                 .addField('Example', '`h!guild Rebel`')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
@@ -243,8 +375,8 @@ module.exports = {
                 .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
                 .addField('h!suggest', '`h!suggest` will let you suggest a feature to be added to HyDiscord')
                 .addField('Aliases', '`h!suggestion`, `h!suggestfeature`')
-                .addField('Usage', '`h!suggest [suggestion]`')
-                .addField('Example', '`h!suggest Add more gamemodes!`')
+                .addField('Usage', '`h!suggest [Suggestion]`')
+                .addField('Example', '`h!suggest Add verification!`')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
                 message.channel.send(suggest)
@@ -255,7 +387,7 @@ module.exports = {
                 .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
                 .addField('h!rng', '`h!rng` will pick a random number between two numbers you choose')
                 .addField('Aliases', '`h!random`')
-                .addField('Usage', '`h!rng [min] [max]`')
+                .addField('Usage', '`h!rng [Min] [Max]`')
                 .addField('Example', '`h!rng 1 10`')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')

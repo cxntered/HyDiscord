@@ -60,14 +60,15 @@ module.exports = {
 
             const playerInfoEmbed = new Discord.MessageEmbed()
                 .setAuthor('Player Stats', 'https://i.imgur.com/OuoECfX.jpeg')              
+                .setDescription(`[${player.rank}] ${player.nickname}`)
                 .setColor(color)
                 .setThumbnail(`https://crafatar.com/avatars/${playerUUIDData.id}?overlay&size=256`)
-                .addField('Rank:', playerRank, true)
-                .addField('Level:', player.level, true)
-                .addField('Karma:', commaNumber(player.karma), true)
+                .addField('Rank:', `\`${playerRank}\``, true)
+                .addField('Level:', `\`${player.level}\``, true)
+                .addField('Karma:', `\`${commaNumber(player.karma)}\``, true)
 
             if (player.guild != null) {
-                playerInfoEmbed.addField('Guild:', player.guild.name)
+                playerInfoEmbed.addField('Guild:', `\`${player.guild.name}\``)
             }
 
             if (player.guild != null && player.guild.tag != null) {
@@ -75,16 +76,16 @@ module.exports = {
                 playerInfoEmbed.addField('Guild:', `${player.guild.name} [${player.guild.tag}]`)
             }
             
-                playerInfoEmbed.addField('Main MC Version:', playerMinecraftVersion, true)
-                playerInfoEmbed.addField('First Login:', (firstL))
-                playerInfoEmbed.addField('Last Login:', (lastL))
-                playerInfoEmbed.addField('Status:', playerIsOnline, true)
+                playerInfoEmbed.addField('Main MC Version:', `\`${playerMinecraftVersion}\``, true)
+                playerInfoEmbed.addField('First Login:', `\`${firstL}\``)
+                playerInfoEmbed.addField('Last Login:', `\`${lastL}\``)
+                playerInfoEmbed.addField('Status:', `\`${playerIsOnline}\``, true)
 
             if (player.rank.includes('MVP+')) {
                 if (player.plusColor == null) {
-                    playerInfoEmbed.addField('Plus Color:', 'Red')
+                    playerInfoEmbed.addField('Plus Color:', '`Red`')
                 } else {
-                    playerInfoEmbed.addField('Plus Color:', player.plusColor)
+                    playerInfoEmbed.addField('Plus Color:', `\`${player.plusColor}\``)
                 }
             }
 

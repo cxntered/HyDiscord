@@ -25,9 +25,9 @@ module.exports = {
                 .setAuthor('Guild Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
-                .addField('Level:', guild.level, true)
-                .addField('Members:', Object.keys(guild.members).length, true)
-                .addField('Date Created:', createdAt, true)
+                .addField('Level:', `\`${guild.level}\``, true)
+                .addField('Members:', `\`${Object.keys(guild.members).length}\``, true)
+                .addField('Date Created:', `\`${createdAt}\``, true)
 
                 if (guild.tag !== null) {
                     guildInfoEmbed.setDescription(`${guild.name} [${guild.tag}]`)

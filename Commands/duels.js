@@ -36,10 +36,10 @@ module.exports = {
                     .setAuthor('Classic Duels Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                     .setDescription(`[${player.rank}] ${player.nickname}`)
                     .setColor(color)
-                    .addField('Kills:', commaNumber(player.stats.duels.classic.kills))
-                    .addField('Losses:', commaNumber(player.stats.duels.classic.losses))
-                    .addField('Deaths:', commaNumber(player.stats.duels.classic.deaths))
-                    .addField('Wins:', commaNumber(player.stats.duels.classic.wins))
+                    .addField('Kills:', `\`${commaNumber(player.stats.duels.classic.kills)}\``, true)
+                    .addField('Losses:', `\`${commaNumber(player.stats.duels.classic.losses)}\``, true)
+                    .addField('Deaths:', `\`${commaNumber(player.stats.duels.classic.deaths)}\``, true)
+                    .addField('Wins:', `\`${commaNumber(player.stats.duels.classic.wins)}\``, true)
                     .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
 
                 message.channel.send(embed);
@@ -79,10 +79,10 @@ module.exports = {
                     .setAuthor('UHC Duels Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                     .setDescription(`[${player.rank}] ${player.nickname}`)
                     .setColor(color)
-                    .addField('Kills:', commaNumber(player.stats.duels.uhc.v1.kills))
-                    .addField('Losses:', commaNumber(player.stats.duels.uhc.v1.losses))
-                    .addField('Deaths:', commaNumber(player.stats.duels.uhc.v1.deaths))
-                    .addField('Wins:', commaNumber(player.stats.duels.uhc.v1.wins))
+                    .addField('Kills:', `\`${commaNumber(player.stats.duels.uhc.v1.kills)}\``, true)
+                    .addField('Losses:', `\`${commaNumber(player.stats.duels.uhc.v1.losses)}\``, true)
+                    .addField('Deaths:', `\`${commaNumber(player.stats.duels.uhc.v1.deaths)}\``, true)
+                    .addField('Wins:', `\`${commaNumber(player.stats.duels.uhc.v1.wins)}\``, true)
                     .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
 
                 message.channel.send(embed);
@@ -122,10 +122,10 @@ module.exports = {
                     .setAuthor('SkyWars Duels Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                     .setDescription(`[${player.rank}] ${player.nickname}`)
                     .setColor(color)
-                    .addField('Kills:', commaNumber(player.stats.duels.skywars.v1.kills))
-                    .addField('Losses:', commaNumber(player.stats.duels.skywars.v1.losses))
-                    .addField('Deaths:', commaNumber(player.stats.duels.skywars.v1.deaths))
-                    .addField('Wins:', commaNumber(player.stats.duels.skywars.v1.wins))
+                    .addField('Kills:', `\`${commaNumber(player.stats.duels.skywars.v1.kills)}\``, true)
+                    .addField('Losses:', `\`${commaNumber(player.stats.duels.skywars.v1.losses)}\``, true)
+                    .addField('Deaths:', `\`${commaNumber(player.stats.duels.skywars.v1.deaths)}\``, true)
+                    .addField('Wins:', `\`${commaNumber(player.stats.duels.skywars.v1.wins)}\``, true)
                     .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
 
                 message.channel.send(embed);
@@ -165,10 +165,10 @@ module.exports = {
                     .setAuthor('The Bridge Duels Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                     .setDescription(`[${player.rank}] ${player.nickname}`)
                     .setColor(color)
-                    .addField('Kills:', commaNumber(player.stats.duels.bridge.v1.kills))
-                    .addField('Losses:', commaNumber(player.stats.duels.bridge.v1.losses))
-                    .addField('Deaths:', commaNumber(player.stats.duels.bridge.v1.deaths))
-                    .addField('Wins:', commaNumber(player.stats.duels.bridge.v1.wins))
+                    .addField('Kills:', `\`${commaNumber(player.stats.duels.bridge.v1.kills)}\``, true)
+                    .addField('Losses:', `\`${commaNumber(player.stats.duels.bridge.v1.losses)}\``, true)
+                    .addField('Deaths:', `\`${commaNumber(player.stats.duels.bridge.v1.deaths)}\``, true)
+                    .addField('Wins:', `\`${commaNumber(player.stats.duels.bridge.v1.wins)}\``, true)
                     .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
 
                 message.channel.send(embed);
@@ -208,10 +208,10 @@ module.exports = {
                     .setAuthor('Sumo Duels Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                     .setDescription(`[${player.rank}] ${player.nickname}`)
                     .setColor(color)
-                    .addField('Kills:', commaNumber(player.stats.duels.sumo.kills))
-                    .addField('Losses:', commaNumber(player.stats.duels.sumo.losses))
-                    .addField('Deaths:', commaNumber(player.stats.duels.sumo.deaths))
-                    .addField('Wins:', commaNumber(player.stats.duels.sumo.wins))
+                    .addField('Kills:', `\`${commaNumber(player.stats.duels.sumo.kills)}\``, true)
+                    .addField('Losses:', `\`${commaNumber(player.stats.duels.sumo.losses)}\``, true)
+                    .addField('Deaths:', `\`${commaNumber(player.stats.duels.sumo.deaths)}\``, true)
+                    .addField('Wins:', `\`${commaNumber(player.stats.duels.sumo.wins)}\``, true)
                     .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
 
                 message.channel.send(embed);
@@ -251,10 +251,10 @@ module.exports = {
                     .setAuthor('OP Duels Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                     .setDescription(`[${player.rank}] ${player.nickname}`)
                     .setColor(color)
-                    .addField('Kills:', commaNumber(player.stats.duels.op.v1.kills))
-                    .addField('Losses:', commaNumber(player.stats.duels.op.v1.losses))
-                    .addField('Deaths:', commaNumber(player.stats.duels.op.v1.deaths))
-                    .addField('Wins:', commaNumber(player.stats.duels.op.v1.wins))
+                    .addField('Kills:', `\`${commaNumber(player.stats.duels.op.v1.kills)}\``, true)
+                    .addField('Losses:', `\`${commaNumber(player.stats.duels.op.v1.losses)}\``, true)
+                    .addField('Deaths:', `\`${commaNumber(player.stats.duels.op.v1.deaths)}\``, true)
+                    .addField('Wins:', `\`${commaNumber(player.stats.duels.op.v1.wins)}\``, true)
                     .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
 
                 message.channel.send(embed);
@@ -293,10 +293,10 @@ module.exports = {
                 const embed = new Discord.MessageEmbed()
                     .setAuthor('Combo Duels Stats', 'https://i.imgur.com/OuoECfX.jpeg')
                     .setColor(color)
-                    .addField('Kills:', commaNumber(player.stats.duels.combo.kills))
-                    .addField('Losses:', commaNumber(player.stats.duels.combo.losses))
-                    .addField('Deaths:', commaNumber(player.stats.duels.combo.deaths))
-                    .addField('Wins:', commaNumber(player.stats.duels.combo.wins))
+                    .addField('Kills:', `\`${commaNumber(player.stats.duels.combo.kills)}\``, true)
+                    .addField('Losses:', `\`${commaNumber(player.stats.duels.combo.losses)}\``, true)
+                    .addField('Deaths:', `\`${commaNumber(player.stats.duels.combo.deaths)}\``, true)
+                    .addField('Wins:', `\`${commaNumber(player.stats.duels.combo.wins)}\``, true)
                     .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
 
                 message.channel.send(embed);
