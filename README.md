@@ -36,9 +36,6 @@ in this one Discord Bot!
 [Check out the HyDiscord forums post!](https://hydiscord.github.io/invite)
 
 ## Commands
-
-Visit the [HyDiscord Website](https://hydiscord.github.io) for more information on the [commands](https://hydiscord.github.io/commands)
-
 <details>
   <summary>Hypixel</summary>
   
