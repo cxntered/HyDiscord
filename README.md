@@ -43,36 +43,49 @@ Visit the [HyDiscord Website](https://hydiscord.github.io) for more information 
   <summary>Hypixel</summary>
   
   ### Hypixel
-  - h!player
-  - h!guild
-  - h!bedwars
-  - h!skywars
-  - h!duels
-  - h!uhc
-  - h!speeduhc
-  - h!watchdog
-  - h!socials
-  - h!namehistory
-  - h!uuid
-  - h!skin
-  - h!server
+  | Command              | Description                                            | Example                       |
+  |----------------------|--------------------------------------------------------|-------------------------------|
+  | h!namehistory        | Shows the name history of a player                     | h!namehistory cxntered        |
+  | h!player             | Shows Hypixel stats of a player                        | h!player cxntered             |
+  | h!guild              | Shows stats of a guild                                 | h!guild Rebel                 |
+  | h!bedwars            | Shows BedWars stats of a player                        | h!bedwars cxntered            |
+  | h!skywars            | Shows SkyWars stats of a player                        | h!skywars cxntered            |
+  | h!duels              | Shows Duels stats of a player                          | h!duels classic cxntered      |
+  | h!uhc                | Shows UHC stats of a player                            | h!uhc cxntered                |
+  | h!speeduhc           | Shows SpeedUHC stats of a player                       | h!speeduhc cxntered           |
+  | h!blitzsurvivalgames | Shows Blitz Survival Games stats of a player           | h!blitzsurvivalgames cxntered |
+  | h!buildbattle        | Shows Build Battle stats of a player                   | h!buildbattle cxntered        |
+  | h!copsandcrims       | Shows Cops and Crims stats of a player                 | h!copsandcrims cxntered       |
+  | h!crazywalls         | Shows Crazy Walls stats of a player                    | h!crazywalls cxntered         |
+  | h!megawalls          | Shows Mega Walls stats of a player                     | h!megawalls cxntered          |
+  | h!murdermystery      | Shows Murder Mystery stats of a player                 | h!murdermystery cxntered      |
+  | h!smashheroes        | Shows Smash Heroes stats of a player                   | h!smashheroes cxntered        |
+  | h!tntgames           | Shows all TNT Games stats of a player                  | h!tntgames cxntered           |
+  | h!vampirez           | Shows VampireZ stats of a player                       | h!vampirez cxntered           |
+  | h!watchdog           | Shows Watchdog stats                                   | h!watchdog                    |
+  | h!socials            | Shows the social medias of a player                    | h!socials cxntered            |
+  | h!skin               | Shows the skin of a player                             | h!skin cxntered               |
+  | h!uuid               | Shows the UUID of a player                             | h!uuid cxntered               |
+  | h!server             | Shows info about a server                              | h!server mc.hypixel.net       |
 </details>
 
 <details>
   <summary>Utility</summary>
   
   ### Utility
-  - h!help
-  - h!members
-  - h!ping
-  - h!links
-  - h!vote
-  - h!clear
-  - h!ban
-  - h!kick
-  - h!suggest
-  - h!coinflip
-  - h!rng
+  | Command              | Description                                            | Example                       |
+  |----------------------|--------------------------------------------------------|-------------------------------|
+  | h!help               | Sends a DM to you containing help information          | h!help                        |
+  | h!links              | Sends you links related to HyDiscord                   | h!links                       |
+  | h!vote               | Sends you a link to vote for HyDiscord on Top.gg       | h!vote                        |
+  | h!ping               | Sends a "Pong!" along with your current ping           | h!ping                        |
+  | h!ban                | Bans a user you specify                                | h!ban @cxntered               |
+  | h!kick               | Kicks a user you specify                               | h!kick @cxntered              |
+  | h!clear              | Clears a specific number of messages you specify       | h!clear 7                     |
+  | h!members            | Shows member count of the server you are in            | h!members                     |
+  | h!suggest            | Lets you suggest a feature to be added to HyDiscord    | h!suggest Add verification!   |
+  | h!rng                | Chooses a random number between two numbers you choose | h!rng 1 10                    |
+  | h!coinflip           | Flips a coin                                           | h!coinflip                    |
 </details>
 
 ## How was HyDiscord made?
