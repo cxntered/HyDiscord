@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const { color, footer } = require('../Storages/embed.json')
+const { color, footer } = require('../Storages/embed.json');
 module.exports = {
     name: 'help',
     aliases: [ "commands", "commandlist" ],
@@ -8,7 +8,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
         .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
         .addField('Hypixel 🎮', '`h!player` \n`h!guild` \n`h!bedwars` \n`h!skywars` \n`h!duels` \n`h!uhc` \n`h!speeduhc` \n`h!speeduhc` \n`h!blitzsurvivalgames` \n`h!buildbattle` \n`h!copsandcrims` \n`h!crazywalls` \n`h!megawalls` \n`h!murdermystery` \n`h!smashheroes` \n`h!tntgames` \n`h!vampirez` \n`h!socials`', true)
-        .addField('Utility 🛠', '`h!help` \n`h!members` \n`h!ping` \n`h!links` \n`h!vote` \n`h!clear` \n`h!ban` \n`h!kick` \n`h!suggest` \n`h!coinflip` \n`h!rng`', true)
+        .addField('Utility 🛠', '`h!help` \n`h!info` \n`h!members` \n`h!ping` \n`h!links` \n`h!vote` \n`h!clear` \n`h!ban` \n`h!kick` \n`h!suggest` \n`h!coinflip` \n`h!rng`', true)
         .addField('Minecraft ⛏', '`h!namehistory` \n`h!uuid` \n`h!skin` \n`h!server`', true)
         .setDescription('Do `h!help [command]` to see what that command does.')
         .setColor(color)
@@ -28,6 +28,16 @@ module.exports = {
                 .setColor(color)
                 .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
                 message.channel.send(help)
+            break;
+            case 'info':
+                const info = new Discord.MessageEmbed()
+                .setAuthor('Help', 'https://i.imgur.com/OuoECfX.jpeg')
+                .addField('h!info', '`h!help` will show info about HyDiscord.')
+                .addField('Usage', '`h!info`')
+                .addField('Example', '`h!info`')
+                .setColor(color)
+                .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
+                message.channel.send(info)
             break;
             case 'ping':
                 const ping = new Discord.MessageEmbed()
