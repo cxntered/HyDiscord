@@ -25,7 +25,7 @@ module.exports = {
 
         if (data && !args[1]) {
             var player = data.uuid;
-        } else if (player) {
+        } else if (args[1]) {
             var player = args[1];
         }
 
