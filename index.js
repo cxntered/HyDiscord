@@ -1,51 +1,55 @@
 const Discord = require('discord.js'); 
-const {Client, Attachment, MessageEmbed} = require('discord.js');
-const bot = new Discord.Client();
+const bot = new Discord.Client({ intents: [
+	 "GUILDS", "GUILD_MESSAGES", "GUILD_MESSAGE_TYPING", "DIRECT_MESSAGES", "DIRECT_MESSAGE_TYPING" 
+], partials: [ "CHANNEL" ] });
 const fs = require('fs');
-const { prefix, token } = require('./Storages/config.json');
-const { color, footer } = require('./Storages/embed.json');
+const mongoose = require('mongoose');
+const { base } = require('./utils/embed');
 
-bot.commands = new Discord.Collection(); // for command handler
-const commandFiles = fs.readdirSync('./Commands/').filter(file => file.endsWith('.js'));
-for(const file of commandFiles){
-    const command = require(`./Commands/${file}`);
-    bot.commands.set(command.name, command);
+require('dotenv').config({ path: './utils/.env' })
+
+mongoose.connect(process.env.uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}).then(() => {
+	console.log('Connected to MongoDB')
+});
+
+bot.commands = new Discord.Collection();
+const commandFolders = fs.readdirSync('./commands')
+for (const folder of commandFolders) {
+	const commandFiles = fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
+	for (const file of commandFiles) {
+        const command = require(`./commands/${folder}/${file}`);
+        bot.commands.set(command.name, command);
+    }
 }
-
 
 bot.on('ready', () =>{ // sets status
 	console.log(`Logged in as ${bot.user.tag}`)
-	bot.user.setPresence({ 
-		status: 'online',
-		activity: {
-			name: 'h!help | Made by cxntered',
-			type: 'PLAYING',
-		}
-	})
+	bot.user.setActivity('h!help | Made by cxntered', { type: 'LISTENING' })
 })
 
-setInterval(function presenceReset() { // resets status every 24 hours to prevent status from disappearing (could be bug with how i write my code)
-	bot.user.setPresence({
-		status: 'online',
-		activity: {
-			name: 'h!help | Made by cxntered',
-			type: 'PLAYING',
-		}
-	})
-}, 86400000)
-
 bot.on('guildCreate', guild => { // invite message
-    const channel = guild.channels.cache.find(channel => channel.type === 'text' && channel.permissionsFor(guild.me).has('SEND_MESSAGES'))
-	const embed = new Discord.MessageEmbed()
+    const channel = guild.channels.cache.find(channel => channel.type === 'GUILD_TEXT' && channel.permissionsFor(guild.me).has('SEND_MESSAGES'))
+	const embed = new Discord.MessageEmbed(base)
 		.setAuthor('HyDiscord', 'https://i.imgur.com/OuoECfX.jpeg')
         .setDescription('**Thank you for adding me!** \n`•` My prefix is `h!` \n`•` You can see all commands by typing `h!help` \n`•` Try using a command, such as `h!bedwars cxntered` \n\n**Links** \n[HyDiscord Server](https://hydiscord.github.io/discord) \n[Website](https://hydiscord.github.io) \n[Vote](https://hydiscord.github.io/vote) \n[Forums Post](https://hydiscord.github.io/forums)')
 		.setThumbnail('https://i.imgur.com/OuoECfX.jpeg')
-        .setColor(color)
-        .setFooter(footer, 'https://i.imgur.com/OuoECfX.jpeg')
-    channel.send(embed)
+    channel.send({ embeds: [embed] })
 })
 
-bot.on('message', message => { // command handler
+bot.on('messageCreate', message => { // command handler
+	const mention = new RegExp(`^<@!${bot.user.id}>$|^<@${bot.user.id}>$`)
+	if (message.content.match(mention)) {
+		const botprefix = new Discord.MessageEmbed(base)
+        	.setAuthor('HyDiscord', 'https://i.imgur.com/OuoECfX.jpeg')
+        	.setDescription('My prefix is `h!`')
+        return message.reply({ embeds: [botprefix], allowedMentions: { repliedUser: false } })
+	}
+	const prefixMention = new RegExp(`^<@!?${bot.user.id}> `);
+	const prefix = message.content.match(prefixMention) ? message.content.match(prefixMention)[0] : process.env.prefix;
+
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
@@ -56,16 +60,22 @@ bot.on('message', message => { // command handler
 
 	if (!command) return;
 
-	if (command.guildOnly && message.channel.type === 'dm') {
-		return message.reply('I can\'t execute that command inside DMs!');
+	if (command.guildOnly && message.channel.type === 'DM') {
+		const cmdguildonly = new Discord.MessageEmbed(base)
+            .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+            .setDescription('I can\'t execute that command inside DMs!')
+        return message.reply({ embeds: [cmdguildonly], allowedMentions: { repliedUser: false } })
 	}
 
 	try {
 		command.execute(message, args, bot);
 	} catch (error) {
 		console.error(error);
-		message.channel.send('There was an error trying to execute that command!');
+		const err = new Discord.MessageEmbed(base)
+            .setAuthor('Error', 'https://i.imgur.com/OuoECfX.jpeg')
+            .setDescription('There was an error trying to execute that command! If the error persists, please make a support ticket in the server. `h!links`')
+        message.reply({ embeds: [err], allowedMentions: { repliedUser: false } })
 	}
 });
 
-bot.login(token);
+bot.login(process.env.token);
