@@ -27,7 +27,7 @@ for (const folder of commandFolders) {
 
 bot.on('ready', () =>{ // sets status
 	console.log(`Logged in as ${bot.user.tag}`)
-	bot.user.setActivity('h!help | Made by cxntered', { type: 'LISTENING' })
+	bot.user.setActivity('for h!help | Made by cxntered', { type: 'WATCHING' })
 })
 
 bot.on('guildCreate', guild => { // invite message
