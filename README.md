@@ -106,7 +106,7 @@ HyDiscord was made using [node.js](https://nodejs.org), [discord.js](https://dis
 3. Copy the token and save it somewhere.
 4. Clone, fork or download the repository.
 5. Download Node.js [here](https://nodejs.org) (Download the latest version)
-6. Set up MongoDB locally, (you might have to modify a bit of code since I coded it with MongoDB Atlas in mind) or, if you don't know how to do setup MongoDB you can follow the MongoDB Atlas setup guide
+6. Set up MongoDB locally, (you might have to modify a bit of code since I coded it with MongoDB Atlas in mind) or, if you don't know how to do setup MongoDB you can follow the [MongoDB Atlas setup guide](https://github.com/HyDiscord/HyDiscord/blob/master/atlas.md)
 7. Navigate to the repository in a terminal. (most terminals use `cd` to change directory)
 8. Run `npm i` in the terminal.
 9. Open the project in a text editor. (such as VS Code or Notepad++)
