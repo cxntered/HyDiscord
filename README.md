@@ -122,4 +122,5 @@ If you have trouble with the bot, you can either open an issue on GitHub or join
 Please refer to the project's [license.](https://github.com/HyDiscord/HyDiscord/blob/master/LICENSE)
 
 ## Note
+<b>Please do not simply change a few lines in the source code and call it your bot. Please credit HyDiscord/cxntered.</b>
 HyDiscord is in no way affiliated with Hypixel Inc. or Hypixel Studios.
