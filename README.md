@@ -123,4 +123,5 @@ Please refer to the project's [license.](https://github.com/HyDiscord/HyDiscord/
 
 ## Note
 <b>Please do not simply change a few lines in the source code and call it your bot. Please credit HyDiscord/cxntered.</b>
+  
 HyDiscord is in no way affiliated with Hypixel Inc. or Hypixel Studios.
