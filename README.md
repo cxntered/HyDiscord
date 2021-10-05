@@ -103,17 +103,20 @@ HyDiscord was made using [node.js](https://nodejs.org), [discord.js](https://dis
 ## How do I run it myself?
 <b>NOTE: Please do not simply change a few lines in the source code and call it your bot! Please credit HyDiscord/cxntered.</b>  
   
-1. Create a Discord Developer Application [here.](https://discord.com/developers/applications)
-2. Create a bot.
-3. Copy the token and save it somewhere.
-4. Clone, fork or download the repository.
-5. Download Node.js [here](https://nodejs.org) (Download the latest version)
-6. Set up MongoDB locally, (you might have to modify a bit of code since I coded it with MongoDB Atlas in mind) or, if you don't know how to do setup MongoDB you can follow the [MongoDB Atlas setup guide](https://github.com/HyDiscord/HyDiscord/blob/master/atlas.md)
-7. Navigate to the repository in a terminal. (most terminals use `cd` to change directory)
-8. Run `npm i` in the terminal.
-9. Open the project in a text editor. (such as VS Code or Notepad++)
-10. Add your token, your API Key and your URI to `.env` in the `utils` folder (you can get your API Key by logging onto `mc.hypixel.net` and running `/api new`)
-11. Run `node .` in a terminal.
+  1. Create a Discord Developer Application [here](https://discord.com/developers/applications)
+  2. Create an application, then go to the Bot section and click "Add Bot"
+  3. Copy the token and save it somewhere 
+  
+  <b>WARNING: DO <i>NOT</i> GIVE OUT YOUR TOKEN TO ANYONE, THEY WILL HAVE FULL ACCESS TO YOUR BOT</b>
+  
+  4. Download the latest release
+  5. Download Node.js [here](https://nodejs.org) (Download the latest version)
+  6. Set up MongoDB locally, (you might have to modify a bit of code since I coded it with MongoDB Atlas in mind) or, if you don't know how to do setup MongoDB you can follow the [MongoDB Atlas setup guide](https://github.com/HyDiscord/HyDiscord/blob/master/atlas.md)
+  7. Navigate to the repository in a terminal. (most terminals use `cd` to change directory)
+  8. Run `npm i` in the terminal.
+  9. Open the project in a text editor. (such as VS Code or Notepad++)
+  10. Add your token, your API Key and your URI to `.env` in the `utils` folder (you can get your API Key by logging onto `mc.hypixel.net` and running `/api new`)
+  11. Run `node .` in a terminal.
 
 HyDiscord should now be running.
 
